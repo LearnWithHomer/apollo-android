@@ -32,7 +32,7 @@ fun <D : Operation.Data> Operation<D>.readDataFromCache(
 ): D? {
   return try {
     val cacheKeyBuilder = RealCacheKeyBuilder()
-    val rootRecord = readableStore.read(CacheKeyResolver.rootKeyForOperation(this).key, CacheHeaders.NONE) ?: return null
+    val rootRecord = readableStore.read(CacheKeyResolver.rootKeyForOperation(this).key, cacheHeaders) ?: return null
     val fieldValueResolver = CacheValueResolver(
         readableStore,
         variables(),

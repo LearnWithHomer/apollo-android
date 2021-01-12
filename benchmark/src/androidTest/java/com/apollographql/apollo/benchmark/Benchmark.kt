@@ -18,6 +18,7 @@ import com.apollographql.apollo.cache.normalized.RecordFieldJsonAdapter
 import com.apollographql.apollo.cache.normalized.internal.ReadableStore
 import com.apollographql.apollo.cache.normalized.internal.normalize
 import com.apollographql.apollo.cache.normalized.internal.readDataFromCache
+import com.apollographql.apollo.cache.normalized.internal.streamDataFromCache
 import com.apollographql.apollo.cache.normalized.sql.SqlNormalizedCache
 import com.apollographql.apollo.cache.normalized.sql.SqlNormalizedCacheFactory
 import com.squareup.moshi.Moshi
@@ -35,15 +36,6 @@ class Benchmark {
   private val moshiAdapter = Moshi.Builder().build().adapter(Query::class.java)
 
   @Test
-  fun apollo() = benchmarkRule.measureRepeated {
-    val bufferedSource = runWithTimingDisabled {
-      bufferedSource()
-    }
-
-    operation.parse(bufferedSource)
-  }
-
-  @Test
   fun moshi() = benchmarkRule.measureRepeated {
     val bufferedSource = runWithTimingDisabled {
       bufferedSource()
@@ -52,6 +44,14 @@ class Benchmark {
     moshiAdapter.fromJson(bufferedSource)
   }
 
+  @Test
+  fun apollo() = benchmarkRule.measureRepeated {
+    val bufferedSource = runWithTimingDisabled {
+      bufferedSource()
+    }
+
+    operation.parse(bufferedSource)
+  }
 
   @Test
   fun apolloParseAndNormalize() = benchmarkRule.measureRepeated {
@@ -93,6 +93,11 @@ class Benchmark {
   @Test
   fun apolloReadCache() = benchmarkRule.measureRepeated {
     val data2 = operation.readDataFromCache(CustomScalarAdapters.DEFAULT, readableStore, CacheKeyResolver.DEFAULT, CacheHeaders.NONE)
+    //println(data2)
+  }
+  @Test
+  fun apolloStreamCache() = benchmarkRule.measureRepeated {
+    val data2 = operation.streamDataFromCache(CustomScalarAdapters.DEFAULT, readableStore, CacheKeyResolver.DEFAULT, CacheHeaders.NONE)
     //println(data2)
   }
 }
