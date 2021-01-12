@@ -32,6 +32,7 @@ import com.apollographql.apollo.api.internal.response.RealResponseWriter
 import com.apollographql.apollo.api.parseData
 import com.apollographql.apollo.cache.normalized.internal.dependentKeys
 import com.apollographql.apollo.cache.normalized.internal.normalize
+import com.apollographql.apollo.cache.normalized.internal.readDataFromCache
 import java.util.ArrayList
 import java.util.Collections
 import java.util.LinkedHashSet
@@ -280,17 +281,14 @@ class RealApolloStore(normalizedCache: NormalizedCache,
       operation: Operation<D>,
       cacheHeaders: CacheHeaders
   ): Response<D> = readTransaction { cache ->
-    val rootRecord = cache.read(rootKeyForOperation(operation).key, cacheHeaders)
-        ?: return@readTransaction builder<D>(operation).fromCache(true).build()
     try {
-      val fieldValueResolver = CacheValueResolver(
+      val data = operation.readDataFromCache(
+          customScalarAdapters,
           cache,
-          operation.variables(),
           cacheKeyResolver(),
-          cacheHeaders,
-          cacheKeyBuilder)
-      val data = operation.parseData(rootRecord, customScalarAdapters, fieldValueResolver)
-      val records = operation.normalize(data, customScalarAdapters, networkResponseNormalizer() as ResponseNormalizer<Map<String, Any>?>)
+          cacheHeaders
+      )
+      val records = operation.normalize(data!!, customScalarAdapters, networkResponseNormalizer() as ResponseNormalizer<Map<String, Any>?>)
       builder<D>(operation)
           .data(data)
           .fromCache(true)
