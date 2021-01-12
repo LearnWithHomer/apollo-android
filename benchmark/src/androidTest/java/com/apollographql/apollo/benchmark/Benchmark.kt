@@ -9,7 +9,9 @@ import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.api.CustomScalarAdapters
 import com.apollographql.apollo.api.parse
 import com.apollographql.apollo.benchmark.moshi.Query
+import com.apollographql.apollo.cache.normalized.RecordFieldJsonAdapter
 import com.apollographql.apollo.cache.normalized.internal.normalize
+import com.apollographql.apollo.cache.normalized.sql.SqlNormalizedCache
 import com.apollographql.apollo.cache.normalized.sql.SqlNormalizedCacheFactory
 import com.squareup.moshi.Moshi
 import org.junit.Before
@@ -53,16 +55,15 @@ class Benchmark {
     val records = operation.normalize(data, CustomScalarAdapters.DEFAULT, Utils.responseNormalizer)
   }
 
-  lateinit var apolloClient: ApolloClient
+  lateinit var cache: SqlNormalizedCache
 
   @Before
   fun setup() {
-    apolloClient = ApolloClient.builder()
-        .normalizedCache(SqlNormalizedCacheFactory(context = InstrumentationRegistry.getInstrumentation().context))
-        .build()
+    cache = SqlNormalizedCacheFactory(context = InstrumentationRegistry.getInstrumentation().context).create(RecordFieldJsonAdapter())
 
     val data = operation.parse(bufferedSource()).data!!
 
+    val records = operation.normalize(data, CustomScalarAdapters.DEFAULT)
     apolloClient.apolloStore.writeOperation(operation, data).execute()
   }
 
