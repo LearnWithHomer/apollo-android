@@ -5,7 +5,7 @@
 //
 package com.example.fragments_with_type_condition_nullable.type;
 
-import com.apollographql.apollo.api.ScalarType;
+import com.homer.apollographql.apollo.api.ScalarType;
 import java.lang.Override;
 import java.lang.String;
 

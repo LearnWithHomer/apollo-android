@@ -5,7 +5,7 @@
 //
 package com.example.root_query_fragment_with_nested_fragments.type;
 
-import com.apollographql.apollo.api.ScalarType;
+import com.homer.apollographql.apollo.api.ScalarType;
 import java.lang.Override;
 import java.lang.String;
 

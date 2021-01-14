@@ -6,7 +6,7 @@ plugins {
 
 sqldelight {
   database("ApolloDatabase") {
-    packageName = "com.apollographql.apollo.cache.normalized.sql"
+    packageName = "com.homer.apollographql.apollo.cache.normalized.sql"
     schemaOutputDirectory = file("src/main/sqldelight/schemas")
   }
 }
@@ -118,4 +118,3 @@ android {
 tasks.withType<Javadoc> {
   options.encoding = "UTF-8"
 }
-

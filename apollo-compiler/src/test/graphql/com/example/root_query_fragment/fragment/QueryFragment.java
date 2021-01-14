@@ -5,14 +5,14 @@
 //
 package com.example.root_query_fragment.fragment;
 
-import com.apollographql.apollo.api.GraphqlFragment;
-import com.apollographql.apollo.api.ResponseField;
-import com.apollographql.apollo.api.internal.Optional;
-import com.apollographql.apollo.api.internal.ResponseFieldMapper;
-import com.apollographql.apollo.api.internal.ResponseFieldMarshaller;
-import com.apollographql.apollo.api.internal.ResponseReader;
-import com.apollographql.apollo.api.internal.ResponseWriter;
-import com.apollographql.apollo.api.internal.Utils;
+import com.homer.apollographql.apollo.api.GraphqlFragment;
+import com.homer.apollographql.apollo.api.ResponseField;
+import com.homer.apollographql.apollo.api.internal.Optional;
+import com.homer.apollographql.apollo.api.internal.ResponseFieldMapper;
+import com.homer.apollographql.apollo.api.internal.ResponseFieldMarshaller;
+import com.homer.apollographql.apollo.api.internal.ResponseReader;
+import com.homer.apollographql.apollo.api.internal.ResponseWriter;
+import com.homer.apollographql.apollo.api.internal.Utils;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;

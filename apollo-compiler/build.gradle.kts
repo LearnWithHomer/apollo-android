@@ -36,14 +36,14 @@ abstract class GeneratePluginVersion : DefaultTask() {
     val versionFile = outputFile.asFile.get()
     versionFile.parentFile.mkdirs()
     versionFile.writeText("""// Generated file. Do not edit!
-package com.apollographql.apollo.compiler
+package com.homer.apollographql.apollo.compiler
 val VERSION = "${project.version}"
 """)
   }
 }
 
 val pluginVersionTaskProvider = tasks.register("pluginVersion", GeneratePluginVersion::class.java) {
-  outputFile.set(project.layout.buildDirectory.file("generated/kotlin/com/apollographql/apollo/compiler/Version.kt"))
+  outputFile.set(project.layout.buildDirectory.file("generated/kotlin/com/homer/apollographql/apollo/compiler/Version.kt"))
   version.set(project.version.toString())
 }
 
@@ -53,7 +53,7 @@ tasks.withType(KotlinCompile::class.java) {
 }
 
 tasks.withType<Checkstyle> {
-  exclude("**com/apollographql/apollo/compiler/parser/antlr/**")
+  exclude("**com/homer/apollographql/apollo/compiler/parser/antlr/**")
 }
 
 // since test/graphql is not an input to Test tasks, they're not run with the changes made in there.

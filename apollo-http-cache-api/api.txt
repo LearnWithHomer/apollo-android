@@ -1,5 +1,5 @@
 // Signature format: 3.0
-package com.apollographql.apollo.api.cache.http {
+package com.homer.apollographql.apollo.api.cache.http {
 
   public interface HttpCache {
     method public void clear();
@@ -15,7 +15,7 @@ package com.apollographql.apollo.api.cache.http {
     field public static final String CACHE_KEY_HEADER = "X-APOLLO-CACHE-KEY";
     field public static final String CACHE_PREFETCH_HEADER = "X-APOLLO-PREFETCH";
     field public static final String CACHE_SERVED_DATE_HEADER = "X-APOLLO-SERVED-DATE";
-    field public static final com.apollographql.apollo.api.cache.http.HttpCache.Companion Companion;
+    field public static final com.homer.apollographql.apollo.api.cache.http.HttpCache.Companion Companion;
     field public static final String FROM_CACHE = "X-APOLLO-FROM-CACHE";
   }
 
@@ -31,34 +31,34 @@ package com.apollographql.apollo.api.cache.http {
   }
 
   public final class HttpCachePolicy {
-    field public static final com.apollographql.apollo.api.cache.http.HttpCachePolicy.ExpirePolicy CACHE_FIRST;
-    field public static final com.apollographql.apollo.api.cache.http.HttpCachePolicy.ExpirePolicy CACHE_ONLY;
-    field public static final com.apollographql.apollo.api.cache.http.HttpCachePolicy INSTANCE;
-    field public static final com.apollographql.apollo.api.cache.http.HttpCachePolicy.ExpirePolicy NETWORK_FIRST;
-    field public static final com.apollographql.apollo.api.cache.http.HttpCachePolicy.Policy NETWORK_ONLY;
+    field public static final com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.ExpirePolicy CACHE_FIRST;
+    field public static final com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.ExpirePolicy CACHE_ONLY;
+    field public static final com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy INSTANCE;
+    field public static final com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.ExpirePolicy NETWORK_FIRST;
+    field public static final com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.Policy NETWORK_ONLY;
   }
 
-  public static final class HttpCachePolicy.ExpirePolicy extends com.apollographql.apollo.api.cache.http.HttpCachePolicy.Policy {
-    method public com.apollographql.apollo.api.cache.http.HttpCachePolicy.ExpirePolicy expireAfter(long expireTimeout, error.NonExistentClass expireTimeUnit);
-    method public com.apollographql.apollo.api.cache.http.HttpCachePolicy.ExpirePolicy expireAfterRead();
+  public static final class HttpCachePolicy.ExpirePolicy extends com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.Policy {
+    method public com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.ExpirePolicy expireAfter(long expireTimeout, error.NonExistentClass expireTimeUnit);
+    method public com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.ExpirePolicy expireAfterRead();
   }
 
   public enum HttpCachePolicy.FetchStrategy {
-    method public static com.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy valueOf(String name);
-    method public static com.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy[] values();
-    enum_constant public static final com.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy CACHE_FIRST;
-    enum_constant public static final com.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy CACHE_ONLY;
-    enum_constant public static final com.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy NETWORK_FIRST;
-    enum_constant public static final com.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy NETWORK_ONLY;
+    method public static com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy valueOf(String name);
+    method public static com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy[] values();
+    enum_constant public static final com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy CACHE_FIRST;
+    enum_constant public static final com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy CACHE_ONLY;
+    enum_constant public static final com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy NETWORK_FIRST;
+    enum_constant public static final com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy NETWORK_ONLY;
   }
 
   public static class HttpCachePolicy.Policy {
-    ctor public HttpCachePolicy.Policy(com.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy fetchStrategy, long expireTimeout, error.NonExistentClass? expireTimeUnit, boolean expireAfterRead);
+    ctor public HttpCachePolicy.Policy(com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy fetchStrategy, long expireTimeout, error.NonExistentClass? expireTimeUnit, boolean expireAfterRead);
     method public final long expireTimeoutMs();
     field public final boolean expireAfterRead;
     field public final error.NonExistentClass? expireTimeUnit;
     field public final long expireTimeout;
-    field public final com.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy fetchStrategy;
+    field public final com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy.FetchStrategy fetchStrategy;
   }
 
   public interface HttpCacheRecord {
@@ -75,8 +75,8 @@ package com.apollographql.apollo.api.cache.http {
   }
 
   public interface HttpCacheStore {
-    method @kotlin.jvm.Throws(exceptionClasses=IOException::class) public com.apollographql.apollo.api.cache.http.HttpCacheRecord? cacheRecord(String cacheKey);
-    method @kotlin.jvm.Throws(exceptionClasses=IOException::class) public com.apollographql.apollo.api.cache.http.HttpCacheRecordEditor? cacheRecordEditor(String cacheKey);
+    method @kotlin.jvm.Throws(exceptionClasses=IOException::class) public com.homer.apollographql.apollo.api.cache.http.HttpCacheRecord? cacheRecord(String cacheKey);
+    method @kotlin.jvm.Throws(exceptionClasses=IOException::class) public com.homer.apollographql.apollo.api.cache.http.HttpCacheRecordEditor? cacheRecordEditor(String cacheKey);
     method @kotlin.jvm.Throws(exceptionClasses=IOException::class) public void delete();
     method @kotlin.jvm.Throws(exceptionClasses=IOException::class) public void remove(String cacheKey);
   }

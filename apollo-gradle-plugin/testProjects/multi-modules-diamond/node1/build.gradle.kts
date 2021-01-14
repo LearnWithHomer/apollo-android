@@ -1,6 +1,6 @@
 plugins {
   kotlin("jvm")
-  id("com.apollographql.apollo")
+  id("com.homer.apollographql.apollo")
 }
 
 dependencies {

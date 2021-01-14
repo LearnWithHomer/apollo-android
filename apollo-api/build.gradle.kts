@@ -83,7 +83,7 @@ kotlin {
 }
 
 metalava {
-  hiddenPackages += setOf("com.apollographql.apollo.api.internal")
+  hiddenPackages += setOf("com.homer.apollographql.apollo.api.internal")
 }
 
 tasks.withType<Checkstyle> {

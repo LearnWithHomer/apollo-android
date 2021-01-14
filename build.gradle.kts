@@ -348,7 +348,7 @@ tasks.register("sonatypeCloseAndReleaseRepository") {
         username = System.getenv("SONATYPE_NEXUS_USERNAME"),
         password = System.getenv("SONATYPE_NEXUS_PASSWORD"),
         baseUrl = "https://oss.sonatype.org/service/local/",
-        groupId = "com.apollographql"
+        groupId = "com.homer.apollographql"
     ).closeAndReleaseRepository()
   }
 }

@@ -5,21 +5,21 @@
 //
 package com.example.mutation_create_review_semantic_naming
 
-import com.apollographql.apollo.api.Mutation
-import com.apollographql.apollo.api.Operation
-import com.apollographql.apollo.api.OperationName
-import com.apollographql.apollo.api.Response
-import com.apollographql.apollo.api.ResponseField
-import com.apollographql.apollo.api.ScalarTypeAdapters
-import com.apollographql.apollo.api.ScalarTypeAdapters.Companion.DEFAULT
-import com.apollographql.apollo.api.internal.InputFieldMarshaller
-import com.apollographql.apollo.api.internal.OperationRequestBodyComposer
-import com.apollographql.apollo.api.internal.QueryDocumentMinifier
-import com.apollographql.apollo.api.internal.ResponseFieldMapper
-import com.apollographql.apollo.api.internal.ResponseFieldMarshaller
-import com.apollographql.apollo.api.internal.ResponseReader
-import com.apollographql.apollo.api.internal.SimpleOperationResponseParser
-import com.apollographql.apollo.api.internal.Throws
+import com.homer.apollographql.apollo.api.Mutation
+import com.homer.apollographql.apollo.api.Operation
+import com.homer.apollographql.apollo.api.OperationName
+import com.homer.apollographql.apollo.api.Response
+import com.homer.apollographql.apollo.api.ResponseField
+import com.homer.apollographql.apollo.api.ScalarTypeAdapters
+import com.homer.apollographql.apollo.api.ScalarTypeAdapters.Companion.DEFAULT
+import com.homer.apollographql.apollo.api.internal.InputFieldMarshaller
+import com.homer.apollographql.apollo.api.internal.OperationRequestBodyComposer
+import com.homer.apollographql.apollo.api.internal.QueryDocumentMinifier
+import com.homer.apollographql.apollo.api.internal.ResponseFieldMapper
+import com.homer.apollographql.apollo.api.internal.ResponseFieldMarshaller
+import com.homer.apollographql.apollo.api.internal.ResponseReader
+import com.homer.apollographql.apollo.api.internal.SimpleOperationResponseParser
+import com.homer.apollographql.apollo.api.internal.Throws
 import com.example.mutation_create_review_semantic_naming.type.Episode
 import com.example.mutation_create_review_semantic_naming.type.ReviewInput
 import kotlin.Any

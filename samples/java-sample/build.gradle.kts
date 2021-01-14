@@ -1,6 +1,6 @@
 import com.android.build.gradle.BaseExtension
 apply(plugin = "com.android.application")
-apply(plugin = "com.apollographql.apollo")
+apply(plugin = "com.homer.apollographql.apollo")
 
 extensions.findByType(BaseExtension::class.java)!!.apply {
   compileSdkVersion(groovy.util.Eval.x(project, "x.androidConfig.compileSdkVersion").toString().toInt())
@@ -37,9 +37,9 @@ extensions.findByType(BaseExtension::class.java)!!.apply {
 
 dependencies {
   add("compileOnly", groovy.util.Eval.x(project, "x.dep.jetbrainsAnnotations"))
-  add("implementation", "com.apollographql.apollo:apollo-runtime")
-  add("implementation", "com.apollographql.apollo:apollo-android-support")
-  add("implementation", "com.apollographql.apollo:apollo-rx2-support")
+  add("implementation", "com.homer.apollographql.apollo:apollo-runtime")
+  add("implementation", "com.homer.apollographql.apollo:apollo-android-support")
+  add("implementation", "com.homer.apollographql.apollo:apollo-rx2-support")
   add("implementation", groovy.util.Eval.x(project, "x.dep.androidx.appcompat"))
   add("implementation", groovy.util.Eval.x(project, "x.dep.androidx.recyclerView"))
   add("implementation", groovy.util.Eval.x(project, "x.dep.rx.java"))

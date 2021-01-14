@@ -13,8 +13,8 @@ include("apollo-normalized-cache")
 include("apollo-normalized-cache-api")
 include("apollo-runtime-kotlin")
 
-if (System.getProperty("idea.sync.active") == null) {
+//if (System.getProperty("idea.sync.active") == null) {
   include("apollo-idling-resource")
   include("apollo-normalized-cache-sqlite")
   include("apollo-android-support")
-}
+//}

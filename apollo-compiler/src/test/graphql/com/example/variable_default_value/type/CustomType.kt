@@ -5,7 +5,7 @@
 //
 package com.example.variable_default_value.type
 
-import com.apollographql.apollo.api.ScalarType
+import com.homer.apollographql.apollo.api.ScalarType
 import kotlin.String
 
 enum class CustomType : ScalarType {

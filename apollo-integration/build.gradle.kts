@@ -1,18 +1,18 @@
-import com.apollographql.apollo.gradle.api.ApolloExtension
+import com.homer.apollographql.apollo.gradle.api.ApolloExtension
 
-apply(plugin = "com.apollographql.apollo")
+apply(plugin = "com.homer.apollographql.apollo")
 apply(plugin = "org.jetbrains.kotlin.jvm")
 
 dependencies {
   add("implementation", groovy.util.Eval.x(project, "x.dep.kotlin.coroutines"))
 
-  add("implementation", "com.apollographql.apollo:apollo-runtime")
-  add("implementation", "com.apollographql.apollo:apollo-rx2-support")
-  add("implementation", "com.apollographql.apollo:apollo-rx3-support")
-  add("implementation", "com.apollographql.apollo:apollo-coroutines-support")
-  add("implementation", "com.apollographql.apollo:apollo-http-cache")
-  add("implementation", "com.apollographql.apollo:apollo-normalized-cache-sqlite")
-  add("implementation", "com.apollographql.apollo:apollo-compiler")
+  add("implementation", "com.homer.apollographql.apollo:apollo-runtime")
+  add("implementation", "com.homer.apollographql.apollo:apollo-rx2-support")
+  add("implementation", "com.homer.apollographql.apollo:apollo-rx3-support")
+  add("implementation", "com.homer.apollographql.apollo:apollo-coroutines-support")
+  add("implementation", "com.homer.apollographql.apollo:apollo-http-cache")
+  add("implementation", "com.homer.apollographql.apollo:apollo-normalized-cache-sqlite")
+  add("implementation", "com.homer.apollographql.apollo:apollo-compiler")
 
   add("testImplementation", kotlin("test-junit"))
   add("testImplementation", groovy.util.Eval.x(project, "x.dep.junit"))
@@ -25,43 +25,43 @@ dependencies {
 configure<ApolloExtension> {
   customTypeMapping.set(mapOf(
       "Date" to "java.util.Date",
-      "Upload" to "com.apollographql.apollo.api.FileUpload"
+      "Upload" to "com.homer.apollographql.apollo.api.FileUpload"
   ))
   generateOperationOutput.set(true)
   service("httpcache") {
     sourceFolder.set("com/apollographql/apollo/integration/httpcache")
-    rootPackageName.set("com.apollographql.apollo.integration.httpcache")
+    rootPackageName.set("com.homer.apollographql.apollo.integration.httpcache")
   }
   service("interceptor") {
     sourceFolder.set("com/apollographql/apollo/integration/interceptor")
-    rootPackageName.set("com.apollographql.apollo.integration.interceptor")
+    rootPackageName.set("com.homer.apollographql.apollo.integration.interceptor")
   }
   service("normalizer") {
     sourceFolder.set("com/apollographql/apollo/integration/normalizer")
-    rootPackageName.set("com.apollographql.apollo.integration.normalizer")
+    rootPackageName.set("com.homer.apollographql.apollo.integration.normalizer")
   }
   service("upload") {
     sourceFolder.set("com/apollographql/apollo/integration/upload")
-    rootPackageName.set("com.apollographql.apollo.integration.upload")
+    rootPackageName.set("com.homer.apollographql.apollo.integration.upload")
   }
   service("subscription") {
     sourceFolder.set("com/apollographql/apollo/integration/subscription")
-    rootPackageName.set("com.apollographql.apollo.integration.subscription")
+    rootPackageName.set("com.homer.apollographql.apollo.integration.subscription")
   }
   service("performance") {
     sourceFolder.set("com/apollographql/apollo/integration/performance")
-    rootPackageName.set("com.apollographql.apollo.integration.performance")
+    rootPackageName.set("com.homer.apollographql.apollo.integration.performance")
   }
   service("directives") {
     sourceFolder.set("com/apollographql/apollo/integration/directives")
-    rootPackageName.set("com.apollographql.apollo.integration.directives")
+    rootPackageName.set("com.homer.apollographql.apollo.integration.directives")
     generateKotlinModels.set(true)
   }
   service("sealedclasses") {
     sealedClassesForEnumsMatching.set(listOf(".*"))
     generateKotlinModels.set(true)
     sourceFolder.set("com/apollographql/apollo/integration/sealedclasses")
-    rootPackageName.set("com.apollographql.apollo.integration.sealedclasses")
+    rootPackageName.set("com.homer.apollographql.apollo.integration.sealedclasses")
   }
 }
 

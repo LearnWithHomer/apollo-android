@@ -1,23 +1,23 @@
 // Signature format: 3.0
-package com.apollographql.apollo {
+package com.homer.apollographql.apollo {
 
-  public final class ApolloAndroidLogger implements com.apollographql.apollo.Logger {
+  public final class ApolloAndroidLogger implements com.homer.apollographql.apollo.Logger {
     ctor public ApolloAndroidLogger();
     method public void log(int priority, String message, Throwable? t, java.lang.Object... args);
   }
 
-  public final class ApolloCallback<T> extends com.apollographql.apollo.ApolloCall.Callback<T> {
-    ctor public ApolloCallback(com.apollographql.apollo.ApolloCall.Callback<T!>, android.os.Handler);
-    method public void onFailure(com.apollographql.apollo.exception.ApolloException);
-    method public void onResponse(com.apollographql.apollo.api.Response<T!>);
-    method public static <T> com.apollographql.apollo.ApolloCallback<T!>! wrap(com.apollographql.apollo.ApolloCall.Callback<T!>, android.os.Handler);
+  public final class ApolloCallback<T> extends com.homer.apollographql.apollo.ApolloCall.Callback<T> {
+    ctor public ApolloCallback(com.homer.apollographql.apollo.ApolloCall.Callback<T!>, android.os.Handler);
+    method public void onFailure(com.homer.apollographql.apollo.exception.ApolloException);
+    method public void onResponse(com.homer.apollographql.apollo.api.Response<T!>);
+    method public static <T> com.homer.apollographql.apollo.ApolloCallback<T!>! wrap(com.homer.apollographql.apollo.ApolloCall.Callback<T!>, android.os.Handler);
   }
 
-  public final class ApolloPrefetchCallback extends com.apollographql.apollo.ApolloPrefetch.Callback {
-    ctor public ApolloPrefetchCallback(com.apollographql.apollo.ApolloPrefetch.Callback, android.os.Handler);
-    method public void onFailure(com.apollographql.apollo.exception.ApolloException);
+  public final class ApolloPrefetchCallback extends com.homer.apollographql.apollo.ApolloPrefetch.Callback {
+    ctor public ApolloPrefetchCallback(com.homer.apollographql.apollo.ApolloPrefetch.Callback, android.os.Handler);
+    method public void onFailure(com.homer.apollographql.apollo.exception.ApolloException);
     method public void onSuccess();
-    method public static <T> com.apollographql.apollo.ApolloPrefetchCallback! wrap(com.apollographql.apollo.ApolloPrefetch.Callback, android.os.Handler);
+    method public static <T> com.homer.apollographql.apollo.ApolloPrefetchCallback! wrap(com.homer.apollographql.apollo.ApolloPrefetch.Callback, android.os.Handler);
   }
 
 }

@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.apollographql.apollo'
+apply plugin: 'com.homer.apollographql.apollo'
 
 android {
    compileSdkVersion androidConfig.compileSdkVersion

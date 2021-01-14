@@ -5,7 +5,7 @@
 //
 package com.example.inline_fragments_with_friends.type
 
-import com.apollographql.apollo.api.EnumValue
+import com.homer.apollographql.apollo.api.EnumValue
 import kotlin.Deprecated
 import kotlin.String
 

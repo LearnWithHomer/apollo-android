@@ -62,7 +62,7 @@ kotlin {
 }
 
 metalava {
-  hiddenPackages += setOf("com.apollographql.apollo.cache.normalized.internal")
+  hiddenPackages += setOf("com.homer.apollographql.apollo.cache.normalized.internal")
 }
 
 tasks.withType<Javadoc> {
