@@ -1,7 +1,11 @@
 package com.apollographql.apollo.compiler
 
-import com.apollographql.apollo.compiler.ir.CodeGenerationContext
-import com.apollographql.apollo.compiler.ir.CodeGenerationIR
+import com.homer.apollographql.apollo.compiler.ir.CodeGenerationContext
+import com.homer.apollographql.apollo.compiler.ir.CodeGenerationIR
+import com.homer.apollographql.apollo.compiler.Annotations
+import com.homer.apollographql.apollo.compiler.ClassNames
+import com.homer.apollographql.apollo.compiler.JavaTypeResolver
+import com.homer.apollographql.apollo.compiler.NullableValueType
 import com.squareup.javapoet.ClassName
 import com.squareup.javapoet.TypeName
 import org.junit.Assert
@@ -35,45 +39,59 @@ class JavaTypeResolverTest {
   @Test
   fun resolveScalarType() {
     Assert.assertEquals(ClassNames.STRING.annotated(Annotations.NONNULL), defaultResolver.resolve("String!"))
-    Assert.assertEquals(ClassNames.parameterizedOptional(ClassNames.STRING), defaultResolver.resolve("String", true))
+    Assert.assertEquals(
+        ClassNames.parameterizedOptional(ClassNames.STRING), defaultResolver.resolve("String", true))
 
     Assert.assertEquals(TypeName.INT, defaultResolver.resolve("Int!"))
-    Assert.assertEquals(ClassNames.parameterizedOptional(TypeName.INT.box()), defaultResolver.resolve("Int", true))
+    Assert.assertEquals(
+        ClassNames.parameterizedOptional(TypeName.INT.box()), defaultResolver.resolve("Int", true))
 
     Assert.assertEquals(TypeName.BOOLEAN, defaultResolver.resolve("Boolean!"))
-    Assert.assertEquals(ClassNames.parameterizedOptional(TypeName.BOOLEAN.box()),
+    Assert.assertEquals(
+        ClassNames.parameterizedOptional(TypeName.BOOLEAN.box()),
         defaultResolver.resolve("Boolean", true))
 
     Assert.assertEquals(TypeName.DOUBLE, defaultResolver.resolve("Float!"))
-    Assert.assertEquals(ClassNames.parameterizedOptional(TypeName.DOUBLE.box()), defaultResolver.resolve("Float", true))
+    Assert.assertEquals(
+        ClassNames.parameterizedOptional(TypeName.DOUBLE.box()), defaultResolver.resolve("Float", true))
   }
 
   @Test
   fun resolveListType() {
-    Assert.assertEquals(ClassNames.parameterizedListOf(ClassNames.STRING).annotated(Annotations.NONNULL),
+    Assert.assertEquals(
+        ClassNames.parameterizedListOf(ClassNames.STRING).annotated(Annotations.NONNULL),
         defaultResolver.resolve("[String!]!"))
-    Assert.assertEquals(ClassNames.parameterizedOptional(ClassNames.parameterizedListOf(ClassNames.STRING)),
+    Assert.assertEquals(
+        ClassNames.parameterizedOptional(ClassNames.parameterizedListOf(ClassNames.STRING)),
         defaultResolver.resolve("[String!]", true))
 
-    Assert.assertEquals(ClassNames.parameterizedListOf(TypeName.INT.box()).annotated(Annotations.NONNULL),
+    Assert.assertEquals(
+        ClassNames.parameterizedListOf(TypeName.INT.box()).annotated(Annotations.NONNULL),
         defaultResolver.resolve("[Int]!"))
-    Assert.assertEquals(ClassNames.parameterizedOptional(ClassNames.parameterizedListOf(TypeName.INT.box())),
+    Assert.assertEquals(
+        ClassNames.parameterizedOptional(ClassNames.parameterizedListOf(TypeName.INT.box())),
         defaultResolver.resolve("[Int]", true))
 
-    Assert.assertEquals(ClassNames.parameterizedListOf(TypeName.BOOLEAN.box()).annotated(Annotations.NONNULL),
+    Assert.assertEquals(
+        ClassNames.parameterizedListOf(TypeName.BOOLEAN.box()).annotated(Annotations.NONNULL),
         defaultResolver.resolve("[Boolean]!"))
-    Assert.assertEquals(ClassNames.parameterizedOptional(ClassNames.parameterizedListOf(TypeName.BOOLEAN.box())),
+    Assert.assertEquals(
+        ClassNames.parameterizedOptional(ClassNames.parameterizedListOf(TypeName.BOOLEAN.box())),
         defaultResolver.resolve("[Boolean]", true))
 
-    Assert.assertEquals(ClassNames.parameterizedListOf(TypeName.DOUBLE.box()).annotated(Annotations.NONNULL),
+    Assert.assertEquals(
+        ClassNames.parameterizedListOf(TypeName.DOUBLE.box()).annotated(Annotations.NONNULL),
         defaultResolver.resolve("[Float]!"))
-    Assert.assertEquals(ClassNames.parameterizedOptional(ClassNames.parameterizedListOf(TypeName.DOUBLE.box())),
+    Assert.assertEquals(
+        ClassNames.parameterizedOptional(ClassNames.parameterizedListOf(TypeName.DOUBLE.box())),
         defaultResolver.resolve("[Float]", true))
 
-    Assert.assertEquals(ClassNames.parameterizedListOf(ClassNames.parameterizedListOf(ClassNames.STRING)).annotated(
+    Assert.assertEquals(
+        ClassNames.parameterizedListOf(ClassNames.parameterizedListOf(ClassNames.STRING)).annotated(
         Annotations.NONNULL),
         defaultResolver.resolve("[[String!]!]!"))
-    Assert.assertEquals(ClassNames.parameterizedOptional(
+    Assert.assertEquals(
+        ClassNames.parameterizedOptional(
         ClassNames.parameterizedListOf(ClassNames.parameterizedListOf(ClassNames.STRING))),
         defaultResolver.resolve("[[String]]", true))
   }
@@ -82,12 +100,14 @@ class JavaTypeResolverTest {
   fun resolveCustomType() {
     Assert.assertEquals(ClassName.get("", "CustomClass").annotated(Annotations.NONNULL),
         JavaTypeResolver(defaultContext, "").resolve("CustomClass!"))
-    Assert.assertEquals(ClassNames.parameterizedOptional(ClassName.get("", "CustomClass")),
+    Assert.assertEquals(
+        ClassNames.parameterizedOptional(ClassName.get("", "CustomClass")),
         JavaTypeResolver(defaultContext, "").resolve("CustomClass", true))
 
     Assert.assertEquals(ClassName.get(packageName, "CustomClass").annotated(Annotations.NONNULL),
         defaultResolver.resolve("CustomClass!"))
-    Assert.assertEquals(ClassNames.parameterizedOptional(ClassName.get(packageName, "CustomClass")),
+    Assert.assertEquals(
+        ClassNames.parameterizedOptional(ClassName.get(packageName, "CustomClass")),
         defaultResolver.resolve("CustomClass", true))
   }
 
@@ -97,13 +117,16 @@ class JavaTypeResolverTest {
         "ID" to "java.lang.Integer"))
     Assert.assertEquals(ClassName.get(Date::class.java).annotated(Annotations.NONNULL),
         JavaTypeResolver(context, packageName).resolve("Date", false))
-    Assert.assertEquals(ClassNames.parameterizedOptional(Date::class.java),
+    Assert.assertEquals(
+        ClassNames.parameterizedOptional(Date::class.java),
         JavaTypeResolver(context, packageName).resolve("Date", true))
-    Assert.assertEquals(ClassNames.parameterizedOptional(ClassName.get("", "Object")),
+    Assert.assertEquals(
+        ClassNames.parameterizedOptional(ClassName.get("", "Object")),
         JavaTypeResolver(context, packageName).resolve("UnsupportedType", true))
     Assert.assertEquals(ClassName.get(Integer::class.java).annotated(Annotations.NONNULL),
         JavaTypeResolver(context, packageName).resolve("ID", false))
-    Assert.assertEquals(ClassNames.parameterizedOptional(Integer::class.java),
+    Assert.assertEquals(
+        ClassNames.parameterizedOptional(Integer::class.java),
         JavaTypeResolver(context, packageName).resolve("ID", true))
   }
 

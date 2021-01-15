@@ -1,6 +1,7 @@
 package com.apollographql.apollo;
 
-import com.apollographql.apollo.interceptor.ApolloInterceptor;
+import com.homer.apollographql.apollo.apollo.ApolloClient;
+import com.homer.apollographql.apollo.apollo.interceptor.ApolloInterceptor;
 import org.junit.Test;
 
 import static com.google.common.truth.Truth.assertThat;

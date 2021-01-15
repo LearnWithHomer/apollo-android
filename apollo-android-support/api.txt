@@ -6,18 +6,18 @@ package com.apollographql.apollo {
     method public void log(int priority, String message, Throwable? t, java.lang.Object... args);
   }
 
-  public final class ApolloCallback<T> extends com.apollographql.apollo.ApolloCall.Callback<T> {
-    ctor public ApolloCallback(com.apollographql.apollo.ApolloCall.Callback<T!>, android.os.Handler);
+  public final class ApolloCallback<T> extends ApolloCall.Callback<T> {
+    ctor public ApolloCallback(ApolloCall.Callback<T!>, android.os.Handler);
     method public void onFailure(com.apollographql.apollo.exception.ApolloException);
     method public void onResponse(com.apollographql.apollo.api.Response<T!>);
-    method public static <T> com.apollographql.apollo.ApolloCallback<T!>! wrap(com.apollographql.apollo.ApolloCall.Callback<T!>, android.os.Handler);
+    method public static <T> com.apollographql.apollo.ApolloCallback<T!>! wrap(ApolloCall.Callback<T!>, android.os.Handler);
   }
 
-  public final class ApolloPrefetchCallback extends com.apollographql.apollo.ApolloPrefetch.Callback {
-    ctor public ApolloPrefetchCallback(com.apollographql.apollo.ApolloPrefetch.Callback, android.os.Handler);
+  public final class ApolloPrefetchCallback extends ApolloPrefetch.Callback {
+    ctor public ApolloPrefetchCallback(ApolloPrefetch.Callback, android.os.Handler);
     method public void onFailure(com.apollographql.apollo.exception.ApolloException);
     method public void onSuccess();
-    method public static <T> com.apollographql.apollo.ApolloPrefetchCallback! wrap(com.apollographql.apollo.ApolloPrefetch.Callback, android.os.Handler);
+    method public static <T> com.apollographql.apollo.ApolloPrefetchCallback! wrap(ApolloPrefetch.Callback, android.os.Handler);
   }
 
 }

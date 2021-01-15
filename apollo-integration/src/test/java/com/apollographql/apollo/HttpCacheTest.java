@@ -9,7 +9,7 @@ import com.apollographql.apollo.cache.ApolloCacheHeaders;
 import com.apollographql.apollo.cache.CacheHeaders;
 import com.apollographql.apollo.cache.http.ApolloHttpCache;
 import com.apollographql.apollo.cache.http.DiskLruHttpCacheStore;
-import com.apollographql.apollo.cache.http.internal.FileSystem;
+import com.homer.apollographql.apollo.cache.http.internal.FileSystem;
 import com.apollographql.apollo.exception.ApolloException;
 import com.apollographql.apollo.exception.ApolloHttpException;
 import com.apollographql.apollo.integration.httpcache.AllFilmsQuery;

@@ -3,14 +3,9 @@ package com.apollographql.apollo.compiler
 import com.apollographql.apollo.api.internal.QueryDocumentMinifier
 import com.apollographql.apollo.compiler.TestUtils.checkTestFixture
 import com.apollographql.apollo.compiler.TestUtils.shouldUpdateTestFixtures
-import com.apollographql.apollo.compiler.parser.sdl.GraphSdlSchema
-import com.apollographql.apollo.compiler.parser.sdl.toIntrospectionSchema
-import com.google.common.truth.Truth.assertAbout
-import com.google.testing.compile.JavaFileObjects
-import com.google.testing.compile.JavaSourcesSubjectFactory.javaSources
-import com.tschuchort.compiletesting.KotlinCompilation
-import com.tschuchort.compiletesting.SourceFile
-import org.junit.Assert.fail
+import com.homer.apollographql.apollo.compiler.GraphQLCompiler
+import com.homer.apollographql.apollo.compiler.NullableValueType
+import com.homer.apollographql.apollo.compiler.OperationOutputGenerator
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized

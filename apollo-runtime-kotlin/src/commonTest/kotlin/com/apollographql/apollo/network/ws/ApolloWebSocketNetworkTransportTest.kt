@@ -1,23 +1,25 @@
 package com.apollographql.apollo.network.ws
 
-import com.apollographql.apollo.ApolloWebSocketException
-import com.apollographql.apollo.ApolloWebSocketServerException
+import com.homer.apollographql.apollo.ApolloWebSocketException
+import com.homer.apollographql.apollo.ApolloWebSocketServerException
 import com.apollographql.apollo.api.ApolloExperimental
 import com.apollographql.apollo.api.ExecutionContext
 import com.apollographql.apollo.api.ScalarTypeAdapters
-import com.apollographql.apollo.dispatcher.ApolloCoroutineDispatcherContext
-import com.apollographql.apollo.interceptor.ApolloRequest
+import com.homer.apollographql.apollo.dispatcher.ApolloCoroutineDispatcherContext
+import com.homer.apollographql.apollo.interceptor.ApolloRequest
 import com.apollographql.apollo.mock.MockSubscription
+import com.apollographql.apollo.mock.MockSubscription.Data
 import com.apollographql.apollo.runBlocking
+import com.homer.apollographql.apollo.network.ws.ApolloGraphQLClientMessage
+import com.homer.apollographql.apollo.network.ws.ApolloWebSocketNetworkTransport
+import com.homer.apollographql.apollo.network.ws.WebSocketConnection
+import com.homer.apollographql.apollo.network.ws.WebSocketFactory
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.ReceiveChannel
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.collectIndexed
-import kotlinx.coroutines.flow.toList
 import okio.ByteString
 import okio.ByteString.Companion.encodeUtf8
 import kotlin.test.Test
@@ -204,7 +206,7 @@ private class FrozenWebSocketConnection(
 }
 
 private class WebSocketConnectionMock(
-    val expectedRequest: ApolloRequest<MockSubscription.Data>,
+    val expectedRequest: ApolloRequest<Data>,
     val expectedOnStartResponse: String,
     private val receivedMessageChannel: Channel<ByteString> = Channel(Channel.BUFFERED)
 ) : WebSocketConnection, ReceiveChannel<ByteString> by receivedMessageChannel {

@@ -1,8 +1,10 @@
 package com.apollographql.apollo.compiler
 
-import com.apollographql.apollo.compiler.parser.error.DocumentParseException
-import com.apollographql.apollo.compiler.parser.error.ParseException
+import com.homer.apollographql.apollo.compiler.parser.error.DocumentParseException
+import com.homer.apollographql.apollo.compiler.parser.error.ParseException
 import com.google.common.truth.Truth
+import com.homer.apollographql.apollo.compiler.ApolloMetadata
+import com.homer.apollographql.apollo.compiler.GraphQLCompiler
 import org.junit.Assert.fail
 import org.junit.Before
 import org.junit.Test

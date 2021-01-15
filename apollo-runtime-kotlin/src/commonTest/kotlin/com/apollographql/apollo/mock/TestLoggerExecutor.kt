@@ -2,10 +2,10 @@ package com.apollographql.apollo.mock
 
 import com.apollographql.apollo.api.ApolloExperimental
 import com.apollographql.apollo.api.Operation
-import com.apollographql.apollo.interceptor.ApolloInterceptorChain
-import com.apollographql.apollo.interceptor.ApolloRequest
-import com.apollographql.apollo.interceptor.ApolloRequestInterceptor
-import com.apollographql.apollo.interceptor.ApolloResponse
+import com.homer.apollographql.apollo.interceptor.ApolloInterceptorChain
+import com.homer.apollographql.apollo.interceptor.ApolloRequest
+import com.homer.apollographql.apollo.interceptor.ApolloRequestInterceptor
+import com.homer.apollographql.apollo.interceptor.ApolloResponse
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch

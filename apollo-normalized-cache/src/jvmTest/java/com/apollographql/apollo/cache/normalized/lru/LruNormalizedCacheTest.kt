@@ -80,8 +80,12 @@ class LruNormalizedCacheTest {
 
   @Test
   fun testEviction() {
-    val lruCache = LruNormalizedCacheFactory(EvictionPolicy.builder().maxSizeBytes(2000)
-        .build()).create(basicFieldAdapter)
+    val lruCache = com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(
+        EvictionPolicy.builder()
+            .maxSizeBytes(2000)
+            .build()
+    )
+        .create(basicFieldAdapter)
     val testRecord1Builder = Record.builder("key1")
     testRecord1Builder.addField("a", String(ByteArray(1100)))
     val testRecord1 = testRecord1Builder.build()
@@ -103,8 +107,12 @@ class LruNormalizedCacheTest {
 
   @Test
   fun testEviction_recordChange() {
-    val lruCache = LruNormalizedCacheFactory(EvictionPolicy.builder().maxSizeBytes(2000)
-        .build()).create(basicFieldAdapter)
+    val lruCache = com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(
+        EvictionPolicy.builder()
+            .maxSizeBytes(2000)
+            .build()
+    )
+        .create(basicFieldAdapter)
     val testRecord1Builder = Record.builder("key1")
     testRecord1Builder.addField("a", String(ByteArray(10)))
     val testRecord1 = testRecord1Builder.build()
@@ -133,8 +141,13 @@ class LruNormalizedCacheTest {
 
   @Test
   fun testDualCacheSingleRecord() {
-    val secondaryCacheFactory = LruNormalizedCacheFactory(EvictionPolicy.NO_EVICTION)
-    val primaryCache = LruNormalizedCacheFactory(EvictionPolicy.NO_EVICTION)
+    val secondaryCacheFactory =
+      com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(
+          EvictionPolicy.NO_EVICTION
+      )
+    val primaryCache = com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(
+        EvictionPolicy.NO_EVICTION
+    )
         .chain(secondaryCacheFactory).createChain(basicFieldAdapter)
     val recordBuilder = Record.builder("root")
     recordBuilder.addField("bar", "bar")
@@ -148,8 +161,13 @@ class LruNormalizedCacheTest {
 
   @Test
   fun testDualCacheMultipleRecord() {
-    val secondaryCacheFactory = LruNormalizedCacheFactory(EvictionPolicy.NO_EVICTION)
-    val primaryCache = LruNormalizedCacheFactory(EvictionPolicy.NO_EVICTION)
+    val secondaryCacheFactory =
+      com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(
+          EvictionPolicy.NO_EVICTION
+      )
+    val primaryCache = com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(
+        EvictionPolicy.NO_EVICTION
+    )
         .chain(secondaryCacheFactory).createChain(basicFieldAdapter)
 
     var recordBuilder = Record.builder("root1")
@@ -173,8 +191,13 @@ class LruNormalizedCacheTest {
 
   @Test
   fun testDualCache_recordNotPresent() {
-    val secondaryCacheFactory = LruNormalizedCacheFactory(EvictionPolicy.NO_EVICTION)
-    val primaryCacheStore = LruNormalizedCacheFactory(EvictionPolicy.NO_EVICTION)
+    val secondaryCacheFactory =
+      com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(
+          EvictionPolicy.NO_EVICTION
+      )
+    val primaryCacheStore = com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(
+        EvictionPolicy.NO_EVICTION
+    )
         .chain(secondaryCacheFactory).createChain(basicFieldAdapter)
 
     assertThat(primaryCacheStore.loadRecord("not_present_id", CacheHeaders.NONE)).isNull()
@@ -182,8 +205,13 @@ class LruNormalizedCacheTest {
 
   @Test
   fun testClearAll() {
-    val secondaryCacheFactory = LruNormalizedCacheFactory(EvictionPolicy.NO_EVICTION)
-    val primaryCacheStore = LruNormalizedCacheFactory(EvictionPolicy.NO_EVICTION)
+    val secondaryCacheFactory =
+      com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(
+          EvictionPolicy.NO_EVICTION
+      )
+    val primaryCacheStore = com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(
+        EvictionPolicy.NO_EVICTION
+    )
         .chain(secondaryCacheFactory).createChain(basicFieldAdapter)
     val record = Record.builder("key").build()
     primaryCacheStore.merge(record, CacheHeaders.NONE)
@@ -194,8 +222,13 @@ class LruNormalizedCacheTest {
 
   @Test
   fun testClearPrimaryCache() {
-    val secondaryCacheFactory = LruNormalizedCacheFactory(EvictionPolicy.NO_EVICTION)
-    val primaryCache = LruNormalizedCacheFactory(EvictionPolicy.NO_EVICTION)
+    val secondaryCacheFactory =
+      com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(
+          EvictionPolicy.NO_EVICTION
+      )
+    val primaryCache = com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(
+        EvictionPolicy.NO_EVICTION
+    )
         .chain(secondaryCacheFactory).createChain(basicFieldAdapter) as LruNormalizedCache
     val record = Record.builder("key").build()
     primaryCache.merge(record, CacheHeaders.NONE)
@@ -208,8 +241,13 @@ class LruNormalizedCacheTest {
 
   @Test
   fun testClearSecondaryCache() {
-    val secondaryCacheFactory = LruNormalizedCacheFactory(EvictionPolicy.NO_EVICTION)
-    val primaryCache = LruNormalizedCacheFactory(EvictionPolicy.NO_EVICTION)
+    val secondaryCacheFactory =
+      com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(
+          EvictionPolicy.NO_EVICTION
+      )
+    val primaryCache = com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(
+        EvictionPolicy.NO_EVICTION
+    )
         .chain(secondaryCacheFactory).createChain(basicFieldAdapter)
     val record = Record.builder("key").build()
 
@@ -356,7 +394,8 @@ class LruNormalizedCacheTest {
   }
 
   private fun createLruNormalizedCache(policy: EvictionPolicy = EvictionPolicy.builder().maxSizeBytes(10 * 1024.toLong()).build()) =
-      LruNormalizedCacheFactory(policy).create(basicFieldAdapter)
+      com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory(policy)
+          .create(basicFieldAdapter)
 
   private fun assertTestRecordPresentAndAccurate(testRecord: Record, store: NormalizedCache) {
     val cacheRecord = requireNotNull(store.loadRecord(testRecord.key, CacheHeaders.NONE))

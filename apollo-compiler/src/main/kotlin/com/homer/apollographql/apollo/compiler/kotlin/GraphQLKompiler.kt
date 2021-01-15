@@ -1,0 +1,33 @@
+package com.homer.apollographql.apollo.compiler.kotlin
+
+import com.homer.apollographql.apollo.compiler.ast.CustomTypes
+import com.homer.apollographql.apollo.compiler.ast.builder.ast
+import com.homer.apollographql.apollo.compiler.ir.CodeGenerationIR
+import com.homer.apollographql.apollo.compiler.operationoutput.OperationOutput
+import java.io.File
+
+class GraphQLKompiler(
+    private val ir: CodeGenerationIR,
+    private val customTypeMap: Map<String, String>,
+    private val useSemanticNaming: Boolean,
+    private val generateAsInternal: Boolean = false,
+    private val operationOutput: OperationOutput,
+    private val kotlinMultiPlatformProject: Boolean,
+    private val enumAsSealedClassPatternFilters: List<Regex>
+) {
+  fun write(outputDir: File) {
+    val schema = ir.ast(
+        customTypeMap = CustomTypes(customTypeMap),
+        typesPackageName = ir.typesPackageName,
+        useSemanticNaming = useSemanticNaming,
+        operationOutput = operationOutput
+    )
+    val schemaCodegen = SchemaCodegen(
+        typesPackageName = ir.typesPackageName,
+        generateAsInternal = generateAsInternal,
+        kotlinMultiPlatformProject = kotlinMultiPlatformProject,
+        enumAsSealedClassPatternFilters = enumAsSealedClassPatternFilters
+    )
+    schemaCodegen.apply(schema::accept).writeTo(outputDir)
+  }
+}

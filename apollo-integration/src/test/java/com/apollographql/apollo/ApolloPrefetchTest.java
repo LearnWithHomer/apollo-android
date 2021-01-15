@@ -5,7 +5,7 @@ import com.apollographql.apollo.api.cache.http.HttpCache;
 import com.apollographql.apollo.api.cache.http.HttpCachePolicy;
 import com.apollographql.apollo.cache.http.ApolloHttpCache;
 import com.apollographql.apollo.cache.http.DiskLruHttpCacheStore;
-import com.apollographql.apollo.cache.http.internal.FileSystem;
+import com.homer.apollographql.apollo.cache.http.internal.FileSystem;
 import com.apollographql.apollo.exception.ApolloException;
 import com.apollographql.apollo.integration.httpcache.AllPlanetsQuery;
 import com.apollographql.apollo.rx2.Rx2Apollo;

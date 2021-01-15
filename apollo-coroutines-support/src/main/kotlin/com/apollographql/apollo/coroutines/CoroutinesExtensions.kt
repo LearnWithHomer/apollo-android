@@ -1,11 +1,11 @@
 package com.apollographql.apollo.coroutines
 
-import com.apollographql.apollo.ApolloCall
-import com.apollographql.apollo.ApolloPrefetch
-import com.apollographql.apollo.ApolloQueryWatcher
-import com.apollographql.apollo.ApolloSubscriptionCall
-import com.apollographql.apollo.api.Response
-import com.apollographql.apollo.exception.ApolloException
+import com.homer.apollographql.apollo.apollo.ApolloCall
+import com.homer.apollographql.apollo.apollo.ApolloPrefetch
+import com.homer.apollographql.apollo.apollo.ApolloQueryWatcher
+import com.homer.apollographql.apollo.apollo.ApolloSubscriptionCall
+import com.homer.apollographql.apollo.api.Response
+import com.homer.apollographql.apollo.exception.ApolloException
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.ExperimentalCoroutinesApi

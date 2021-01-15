@@ -76,18 +76,18 @@ package com.apollographql.apollo.cache.normalized.lru {
 
   public final class EvictionPolicy {
     method public static com.apollographql.apollo.cache.normalized.lru.EvictionPolicy.Builder builder();
-    method @Deprecated public com.apollographql.apollo.api.internal.Optional<java.lang.Long> expireAfterAccess();
-    method @Deprecated public com.apollographql.apollo.api.internal.Optional<error.NonExistentClass> expireAfterAccessTimeUnit();
-    method @Deprecated public com.apollographql.apollo.api.internal.Optional<java.lang.Long> expireAfterWrite();
-    method @Deprecated public com.apollographql.apollo.api.internal.Optional<error.NonExistentClass> expireAfterWriteTimeUnit();
+    method @Deprecated public com.homer.apollographql.apollo.api.internal.Optional<java.lang.Long> expireAfterAccess();
+    method @Deprecated public com.homer.apollographql.apollo.api.internal.Optional<error.NonExistentClass> expireAfterAccessTimeUnit();
+    method @Deprecated public com.homer.apollographql.apollo.api.internal.Optional<java.lang.Long> expireAfterWrite();
+    method @Deprecated public com.homer.apollographql.apollo.api.internal.Optional<error.NonExistentClass> expireAfterWriteTimeUnit();
     method public Long? getExpireAfterAccess();
     method public error.NonExistentClass? getExpireAfterAccessTimeUnit();
     method public Long? getExpireAfterWrite();
     method public error.NonExistentClass? getExpireAfterWriteTimeUnit();
     method public Long? getMaxEntries();
     method public Long? getMaxSizeBytes();
-    method @Deprecated public com.apollographql.apollo.api.internal.Optional<java.lang.Long> maxEntries();
-    method @Deprecated public com.apollographql.apollo.api.internal.Optional<java.lang.Long> maxSizeBytes();
+    method @Deprecated public com.homer.apollographql.apollo.api.internal.Optional<java.lang.Long> maxEntries();
+    method @Deprecated public com.homer.apollographql.apollo.api.internal.Optional<java.lang.Long> maxSizeBytes();
     field public static final com.apollographql.apollo.cache.normalized.lru.EvictionPolicy.Companion Companion;
     field public static final com.apollographql.apollo.cache.normalized.lru.EvictionPolicy NO_EVICTION;
   }

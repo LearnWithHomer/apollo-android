@@ -1,6 +1,11 @@
 package com.apollographql.apollo.subscription
 
 import com.google.common.truth.Truth.assertThat
+import com.homer.apollographql.apollo.apollo.subscription.OperationClientMessage
+import com.homer.apollographql.apollo.apollo.subscription.OperationServerMessage
+import com.homer.apollographql.apollo.apollo.subscription.SubscriptionTransport
+import com.homer.apollographql.apollo.apollo.subscription.SubscriptionTransport.Callback
+import com.homer.apollographql.apollo.apollo.subscription.WebSocketSubscriptionTransport
 import okhttp3.Protocol
 import okhttp3.Request
 import okhttp3.Response
@@ -55,7 +60,7 @@ class WebSocketSubscriptionTransportTest {
   @Test
   fun send() {
     val callbackFailure = AtomicReference<Throwable?>()
-    subscriptionTransport = WebSocketSubscriptionTransport(webSocketRequest, webSocketFactory, object : SubscriptionTransport.Callback {
+    subscriptionTransport = WebSocketSubscriptionTransport(webSocketRequest, webSocketFactory, object : Callback {
       override fun onConnected() {}
       override fun onFailure(t: Throwable) {
         callbackFailure.set(t)
@@ -80,7 +85,7 @@ class WebSocketSubscriptionTransportTest {
     val callbackConnected = AtomicBoolean()
     val callbackFailure = AtomicReference<Throwable>()
     val callbackMessage = AtomicReference<OperationServerMessage>()
-    subscriptionTransport = WebSocketSubscriptionTransport(webSocketRequest, webSocketFactory, object : SubscriptionTransport.Callback {
+    subscriptionTransport = WebSocketSubscriptionTransport(webSocketRequest, webSocketFactory, object : Callback {
       override fun onConnected() {
         callbackConnected.set(true)
       }
@@ -107,7 +112,7 @@ class WebSocketSubscriptionTransportTest {
   fun subscriptionTransportClosedCallback() {
     val callbackConnected = AtomicBoolean()
     val callbackClosed = AtomicBoolean()
-    subscriptionTransport = WebSocketSubscriptionTransport(webSocketRequest, webSocketFactory, object : SubscriptionTransport.Callback {
+    subscriptionTransport = WebSocketSubscriptionTransport(webSocketRequest, webSocketFactory, object : Callback {
       override fun onConnected() {
         callbackConnected.set(true)
       }

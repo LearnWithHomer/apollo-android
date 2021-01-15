@@ -4,7 +4,7 @@ plugins {
 }
 
 metalava {
-  hiddenPackages += setOf("com.apollographql.apollo.internal")
+  hiddenPackages += setOf("com.homer.apollographql.apollo.internal")
 }
 
 dependencies {
@@ -18,7 +18,6 @@ dependencies {
   add("testImplementation", groovy.util.Eval.x(project, "x.dep.junit"))
   add("testImplementation", groovy.util.Eval.x(project, "x.dep.truth"))
   add("testImplementation", groovy.util.Eval.x(project, "x.dep.okHttp.mockWebServer"))
-  add("testImplementation", project(":apollo-rx2-support"))
 }
 
 tasks.withType<Javadoc> {

@@ -5,6 +5,7 @@ import com.apollographql.apollo.api.Operation;
 import com.apollographql.apollo.api.ScalarType;
 import com.apollographql.apollo.api.ScalarTypeAdapters;
 import com.apollographql.apollo.api.internal.ResponseFieldMapper;
+import com.homer.apollographql.apollo.apollo.response.OperationResponseParser;
 import org.junit.Test;
 
 import java.util.HashMap;

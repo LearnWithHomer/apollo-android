@@ -1,6 +1,6 @@
 package com.apollographql.apollo.mock
 
-import com.apollographql.apollo.ApolloParseException
+import com.homer.apollographql.apollo.ApolloParseException
 import com.apollographql.apollo.api.Operation
 import com.apollographql.apollo.api.OperationName
 import com.apollographql.apollo.api.Query

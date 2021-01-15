@@ -1,13 +1,13 @@
 package com.apollographql.apollo.compiler
 
-import com.apollographql.apollo.compiler.parser.error.ParseException
-import com.apollographql.apollo.compiler.parser.introspection.IntrospectionSchema
-import com.apollographql.apollo.compiler.parser.introspection.IntrospectionSchema.Companion.wrap
-import com.apollographql.apollo.compiler.parser.introspection.toSDL
-import com.apollographql.apollo.compiler.parser.sdl.GraphSdlSchema
-import com.apollographql.apollo.compiler.parser.sdl.toIntrospectionSchema
-import com.google.common.truth.Truth
+import com.homer.apollographql.apollo.compiler.parser.error.ParseException
+import com.homer.apollographql.apollo.compiler.parser.introspection.IntrospectionSchema
+import com.homer.apollographql.apollo.compiler.parser.introspection.IntrospectionSchema.Companion.wrap
+import com.homer.apollographql.apollo.compiler.parser.introspection.toSDL
+import com.homer.apollographql.apollo.compiler.parser.sdl.GraphSdlSchema
+import com.homer.apollographql.apollo.compiler.parser.sdl.toIntrospectionSchema
 import com.google.common.truth.Truth.assertThat
+import com.homer.apollographql.apollo.compiler.toJson
 import org.junit.Assert.assertEquals
 import org.junit.Assert.fail
 import org.junit.Test

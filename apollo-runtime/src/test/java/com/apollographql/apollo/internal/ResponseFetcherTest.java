@@ -1,14 +1,15 @@
 package com.apollographql.apollo.internal;
 
-import com.apollographql.apollo.ApolloClient;
+import com.homer.apollographql.apollo.apollo.ApolloClient;
 import com.apollographql.apollo.api.OperationName;
 import com.apollographql.apollo.api.Query;
 import com.apollographql.apollo.api.Response;
 import com.apollographql.apollo.api.ScalarTypeAdapters;
-import com.apollographql.apollo.api.cache.http.HttpCachePolicy;
+import com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy;
 import com.apollographql.apollo.api.internal.OperationRequestBodyComposer;
 import com.apollographql.apollo.api.internal.ResponseFieldMapper;
 import com.apollographql.apollo.api.internal.ResponseReader;
+import com.homer.apollographql.apollo.apollo.internal.RealApolloCall;
 import okhttp3.OkHttpClient;
 import okio.BufferedSource;
 import okio.ByteString;
@@ -16,8 +17,8 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.Before;
 import org.junit.Test;
 
-import static com.apollographql.apollo.fetcher.ApolloResponseFetchers.CACHE_FIRST;
-import static com.apollographql.apollo.fetcher.ApolloResponseFetchers.NETWORK_ONLY;
+import static com.homer.apollographql.apollo.apollo.fetcher.ApolloResponseFetchers.CACHE_FIRST;
+import static com.homer.apollographql.apollo.apollo.fetcher.ApolloResponseFetchers.NETWORK_ONLY;
 import static com.google.common.truth.Truth.assertThat;
 
 public class ResponseFetcherTest {

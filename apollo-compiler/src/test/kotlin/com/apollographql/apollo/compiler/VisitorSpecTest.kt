@@ -1,5 +1,7 @@
 package com.apollographql.apollo.compiler
 
+import com.homer.apollographql.apollo.compiler.VisitorInterfaceSpec
+import com.homer.apollographql.apollo.compiler.VisitorMethodSpec
 import com.squareup.javapoet.ClassName
 import org.junit.Assert
 import org.junit.Test

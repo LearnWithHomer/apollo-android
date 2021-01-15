@@ -5,6 +5,10 @@ import com.apollographql.apollo.api.ScalarTypeAdapters
 import com.apollographql.apollo.api.internal.json.BufferedSourceJsonReader
 import com.apollographql.apollo.api.internal.json.ResponseJsonStreamReader
 import com.google.common.truth.Truth.assertThat
+import com.homer.apollographql.apollo.apollo.subscription.ApolloOperationMessageSerializer
+import com.homer.apollographql.apollo.apollo.subscription.OperationClientMessage
+import com.homer.apollographql.apollo.apollo.subscription.OperationMessageSerializer
+import com.homer.apollographql.apollo.apollo.subscription.OperationServerMessage
 import okio.Buffer
 import org.junit.Test
 
@@ -116,7 +120,8 @@ class ApolloOperationMessageSerializerTest {
 
   @Test
   fun readServerMessage_data() {
-    assertThat(serializer.readServerMessage("""{"type":"data","id":"some-id","payload":{"key":"value"}}""")).isEqualTo(OperationServerMessage.Data(
+    assertThat(serializer.readServerMessage("""{"type":"data","id":"some-id","payload":{"key":"value"}}""")).isEqualTo(
+        OperationServerMessage.Data(
         id = "some-id",
         payload = mapOf("key" to "value")
     ))
@@ -129,7 +134,8 @@ class ApolloOperationMessageSerializerTest {
 
   @Test
   fun readServerMessage_error() {
-    assertThat(serializer.readServerMessage("""{"type":"error","id":"some-id","payload":{"key":"value"}}""")).isEqualTo(OperationServerMessage.Error(
+    assertThat(serializer.readServerMessage("""{"type":"error","id":"some-id","payload":{"key":"value"}}""")).isEqualTo(
+        OperationServerMessage.Error(
         id = "some-id",
         payload = mapOf("key" to "value")
     ))
@@ -137,14 +143,16 @@ class ApolloOperationMessageSerializerTest {
 
   @Test
   fun readServerMessage_connectionError() {
-    assertThat(serializer.readServerMessage("""{"type":"connection_error","payload":{"key":"value"}}""")).isEqualTo(OperationServerMessage.ConnectionError(
+    assertThat(serializer.readServerMessage("""{"type":"connection_error","payload":{"key":"value"}}""")).isEqualTo(
+        OperationServerMessage.ConnectionError(
         payload = mapOf("key" to "value")
     ))
   }
 
   @Test
   fun readServerMessage_complete() {
-    assertThat(serializer.readServerMessage("""{"type":"complete","id":"some-id"}""")).isEqualTo(OperationServerMessage.Complete(
+    assertThat(serializer.readServerMessage("""{"type":"complete","id":"some-id"}""")).isEqualTo(
+        OperationServerMessage.Complete(
         id = "some-id"
     ))
   }

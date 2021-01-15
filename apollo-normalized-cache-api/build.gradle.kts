@@ -4,22 +4,6 @@ plugins {
 }
 
 kotlin {
-  @Suppress("ClassName")
-  data class iOSTarget(val name: String, val preset: String, val id: String)
-
-  val iosTargets = listOf(
-      iOSTarget("ios", "iosArm64", "ios-arm64"),
-      iOSTarget("iosSim", "iosX64", "ios-x64")
-  )
-
-  for ((targetName, presetName, id) in iosTargets) {
-    targetFromPreset(presets.getByName(presetName), targetName) {
-      mavenPublication {
-        artifactId = "${project.name}-$id"
-      }
-    }
-  }
-
   jvm()
   
   sourceSets {
@@ -35,14 +19,6 @@ kotlin {
       dependsOn(commonMain)
       dependencies {
       }
-    }
-
-    val iosMain by getting {
-      dependsOn(commonMain)
-    }
-
-    val iosSimMain by getting {
-      dependsOn(iosMain)
     }
 
     val commonTest by getting {
@@ -62,7 +38,7 @@ kotlin {
 }
 
 metalava {
-  hiddenPackages += setOf("com.apollographql.apollo.cache.normalized.internal")
+  hiddenPackages += setOf("com.homer.apollographql.apollo.cache.normalized.internal")
 }
 
 tasks.withType<Javadoc> {

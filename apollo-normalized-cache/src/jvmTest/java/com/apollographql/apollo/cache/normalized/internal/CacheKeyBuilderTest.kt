@@ -1,14 +1,16 @@
 package com.apollographql.apollo.cache.normalized.internal
 
-import com.apollographql.apollo.api.InputType
-import com.apollographql.apollo.api.Operation
-import com.apollographql.apollo.api.ResponseField
-import com.apollographql.apollo.api.ResponseField.Companion.forString
-import com.apollographql.apollo.api.ScalarType
-import com.apollographql.apollo.api.internal.InputFieldMarshaller
-import com.apollographql.apollo.api.internal.InputFieldWriter
-import com.apollographql.apollo.api.internal.UnmodifiableMapBuilder
+import com.homer.apollographql.apollo.api.InputType
+import com.homer.apollographql.apollo.api.Operation
+import com.homer.apollographql.apollo.api.ResponseField
+import com.homer.apollographql.apollo.api.ResponseField.Companion.forString
+import com.homer.apollographql.apollo.api.ScalarType
+import com.homer.apollographql.apollo.api.internal.InputFieldMarshaller
+import com.homer.apollographql.apollo.api.internal.InputFieldWriter
+import com.homer.apollographql.apollo.api.internal.UnmodifiableMapBuilder
 import com.google.common.truth.Truth
+import com.homer.apollographql.apollo.cache.normalized.internal.CacheKeyBuilder
+import com.homer.apollographql.apollo.cache.normalized.internal.RealCacheKeyBuilder
 import org.junit.Test
 import java.io.IOException
 import java.math.BigDecimal
@@ -45,7 +47,9 @@ class CacheKeyBuilderTest {
 
   @Test
   fun testFieldWithArgument() {
-    val arguments = UnmodifiableMapBuilder<String, Any?>(1)
+    val arguments = UnmodifiableMapBuilder<String, Any?>(
+        1
+    )
         .put("episode", "JEDI")
         .build()
     val field = createResponseField("hero", "hero", arguments)
@@ -59,7 +63,9 @@ class CacheKeyBuilderTest {
 
   @Test
   fun testFieldWithArgumentAndAlias() {
-    val arguments = UnmodifiableMapBuilder<String, Any?>(1)
+    val arguments = UnmodifiableMapBuilder<String, Any?>(
+        1
+    )
         .put("episode", "JEDI")
         .build()
     val field = createResponseField("r2", "hero", arguments)
@@ -73,8 +79,12 @@ class CacheKeyBuilderTest {
 
   @Test
   fun testFieldWithVariableArgument() {
-    val argument = UnmodifiableMapBuilder<String, Any?>(1)
-        .put("episode", UnmodifiableMapBuilder<String, Any>(2)
+    val argument = UnmodifiableMapBuilder<String, Any?>(
+        1
+    )
+        .put("episode", UnmodifiableMapBuilder<String, Any>(
+            2
+        )
             .put("kind", "Variable")
             .put("variableName", "episode")
             .build())
@@ -92,8 +102,12 @@ class CacheKeyBuilderTest {
 
   @Test
   fun testFieldWithVariableArgumentNull() {
-    val argument = UnmodifiableMapBuilder<String, Any?>(1)
-        .put("episode", UnmodifiableMapBuilder<String, Any>(2)
+    val argument = UnmodifiableMapBuilder<String, Any?>(
+        1
+    )
+        .put("episode", UnmodifiableMapBuilder<String, Any>(
+            2
+        )
             .put("kind", "Variable")
             .put("variableName", "episode")
             .build())
@@ -111,7 +125,9 @@ class CacheKeyBuilderTest {
 
   @Test
   fun testFieldWithMultipleArgument() {
-    val build = UnmodifiableMapBuilder<String, Any?>(1)
+    val build = UnmodifiableMapBuilder<String, Any?>(
+        1
+    )
         .put("episode", "JEDI")
         .put("color", "blue")
         .build()
@@ -126,7 +142,9 @@ class CacheKeyBuilderTest {
 
   @Test
   fun testFieldWithMultipleArgumentsOrderIndependent() {
-    val arguments = UnmodifiableMapBuilder<String, Any?>(1)
+    val arguments = UnmodifiableMapBuilder<String, Any?>(
+        1
+    )
         .put("episode", "JEDI")
         .put("color", "blue")
         .build()
@@ -136,7 +154,9 @@ class CacheKeyBuilderTest {
         return super.valueMap()
       }
     }
-    val fieldTwoArguments = UnmodifiableMapBuilder<String, Any?>(1)
+    val fieldTwoArguments = UnmodifiableMapBuilder<String, Any?>(
+        1
+    )
         .put("color", "blue")
         .put("episode", "JEDI")
         .build()
@@ -146,9 +166,13 @@ class CacheKeyBuilderTest {
 
   @Test
   fun testFieldWithNestedObject() {
-    val arguments = UnmodifiableMapBuilder<String, Any?>(1)
+    val arguments = UnmodifiableMapBuilder<String, Any?>(
+        1
+    )
         .put("episode", "JEDI")
-        .put("nested", UnmodifiableMapBuilder<String, Any>(2)
+        .put("nested", UnmodifiableMapBuilder<String, Any>(
+            2
+        )
             .put("foo", 1)
             .put("bar", 2)
             .build())
@@ -164,7 +188,9 @@ class CacheKeyBuilderTest {
 
   @Test
   fun testFieldWithNonPrimitiveValue() {
-    val field = forString("hero", "hero", UnmodifiableMapBuilder<String, Any?>(1)
+    val field = forString("hero", "hero", UnmodifiableMapBuilder<String, Any?>(
+        1
+    )
         .put("episode", Episode.JEDI)
         .build(), false, emptyList())
     val variables: Operation.Variables = object : Operation.Variables() {
@@ -177,10 +203,16 @@ class CacheKeyBuilderTest {
 
   @Test
   fun testFieldWithNestedObjectAndVariables() {
-    val arguments = UnmodifiableMapBuilder<String, Any?>(1)
+    val arguments = UnmodifiableMapBuilder<String, Any?>(
+        1
+    )
         .put("episode", "JEDI")
-        .put("nested", UnmodifiableMapBuilder<String, Any>(2)
-            .put("foo", UnmodifiableMapBuilder<String, Any>(2)
+        .put("nested", UnmodifiableMapBuilder<String, Any>(
+            2
+        )
+            .put("foo", UnmodifiableMapBuilder<String, Any>(
+                2
+            )
                 .put("kind", "Variable")
                 .put("variableName", "stars")
                 .build())
@@ -200,10 +232,16 @@ class CacheKeyBuilderTest {
 
   @Test
   fun fieldInputTypeArgument() {
-    val arguments = UnmodifiableMapBuilder<String, Any?>(1)
+    val arguments = UnmodifiableMapBuilder<String, Any?>(
+        1
+    )
         .put("episode", "JEDI")
-        .put("nested", UnmodifiableMapBuilder<String, Any>(2)
-            .put("foo", UnmodifiableMapBuilder<String, Any>(2)
+        .put("nested", UnmodifiableMapBuilder<String, Any>(
+            2
+        )
+            .put("foo", UnmodifiableMapBuilder<String, Any>(
+                2
+            )
                 .put("kind", "Variable")
                 .put("variableName", "testInput")
                 .build())
@@ -288,10 +326,16 @@ class CacheKeyBuilderTest {
 
   @Test
   fun testFieldArgumentInputTypeWithNulls() {
-    val arguments = UnmodifiableMapBuilder<String, Any?>(1)
+    val arguments = UnmodifiableMapBuilder<String, Any?>(
+        1
+    )
         .put("episode", null)
-        .put("nested", UnmodifiableMapBuilder<String, Any?>(2)
-            .put("foo", UnmodifiableMapBuilder<String, Any>(2)
+        .put("nested", UnmodifiableMapBuilder<String, Any?>(
+            2
+        )
+            .put("foo", UnmodifiableMapBuilder<String, Any>(
+                2
+            )
                 .put("kind", "Variable")
                 .put("variableName", "testInput")
                 .build())

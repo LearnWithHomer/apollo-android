@@ -3,17 +3,19 @@ package com.apollographql.apollo
 import com.apollographql.apollo.api.ApolloExperimental
 import com.apollographql.apollo.api.ExecutionContext
 import com.apollographql.apollo.api.Operation
-import com.apollographql.apollo.interceptor.ApolloRequest
-import com.apollographql.apollo.interceptor.ApolloResponse
-import com.apollographql.apollo.interceptor.BearerTokenInterceptor
+import com.homer.apollographql.apollo.interceptor.ApolloRequest
+import com.homer.apollographql.apollo.interceptor.ApolloResponse
+import com.homer.apollographql.apollo.interceptor.BearerTokenInterceptor
 import com.apollographql.apollo.mock.MockQuery
 import com.apollographql.apollo.mock.TestTokenProvider
-import com.apollographql.apollo.network.HttpExecutionContext
-import com.apollographql.apollo.network.NetworkTransport
+import com.homer.apollographql.apollo.network.HttpExecutionContext
+import com.homer.apollographql.apollo.ApolloClient
+import com.homer.apollographql.apollo.ApolloException
+import com.homer.apollographql.apollo.ApolloHttpException
+import com.homer.apollographql.apollo.network.NetworkTransport
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.single
 import okio.ByteString.Companion.encodeUtf8
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -62,10 +64,12 @@ class OauthInterceptorTest {
     val networkTransport = AuthenticatedNetworkTransport()
     return ApolloClient(
         networkTransport = networkTransport,
-        interceptors = listOf(BearerTokenInterceptor(TestTokenProvider(
+        interceptors = listOf(
+            BearerTokenInterceptor(TestTokenProvider(
             currentAccessToken,
             newAccessToken
-        )))
+        ))
+        )
     )
   }
 

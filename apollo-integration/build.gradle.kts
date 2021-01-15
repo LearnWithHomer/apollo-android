@@ -1,4 +1,4 @@
-import com.apollographql.apollo.gradle.api.ApolloExtension
+import com.homer.apollographql.apollo.gradle.api.ApolloExtension
 
 apply(plugin = "com.apollographql.apollo")
 apply(plugin = "org.jetbrains.kotlin.jvm")

@@ -1,7 +1,7 @@
 package com.apollographql.apollo.internal.reader;
 
-import com.apollographql.apollo.ApolloClient;
-import com.apollographql.apollo.IdleResourceCallback;
+import com.homer.apollographql.apollo.apollo.ApolloClient;
+import com.homer.apollographql.apollo.apollo.IdleResourceCallback;
 import com.apollographql.apollo.api.OperationName;
 import com.apollographql.apollo.api.Query;
 import com.apollographql.apollo.api.Response;
