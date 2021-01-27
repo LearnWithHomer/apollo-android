@@ -14,6 +14,8 @@ buildscript {
 ApiCompatibility.configure(rootProject)
 
 subprojects {
+  setJitPackFields()
+
   apply {
     from(rootProject.file("gradle/dependencies.gradle"))
   }
@@ -378,6 +380,14 @@ tasks.register("bintrayPublish") {
         "Cannot publish to bintray: ${it.code}\n: ${it.body?.string()}"
       }
     }
+  }
+}
+
+/* Jit pack configuration */
+fun Project.setJitPackFields() {
+  val android = extensions.findByType(com.android.build.gradle.BaseExtension::class.java)
+  if ( android as? com.android.build.gradle.LibraryExtension != null) {
+    apply(plugin = "com.github.dcendents.android-maven")
   }
 }
 
