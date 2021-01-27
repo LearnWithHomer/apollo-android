@@ -63,10 +63,6 @@ kotlin {
         implementation(groovy.util.Eval.x(project, "x.dep.okHttp.okHttp"))
       }
     }
-
-    val iosSimTest by getting {
-      dependsOn(commonTest)
-    }
   }
 }
 

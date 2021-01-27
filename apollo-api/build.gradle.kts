@@ -58,12 +58,6 @@ kotlin {
       }
     }
 
-    val jsTest by getting {
-      dependencies {
-        implementation(kotlin("test-js"))
-      }
-    }
-
     val commonTest by getting {
       dependencies {
         implementation(kotlin("test-common"))
