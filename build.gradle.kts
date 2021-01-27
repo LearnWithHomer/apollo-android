@@ -14,6 +14,8 @@ buildscript {
 ApiCompatibility.configure(rootProject)
 
 subprojects {
+  setJitPackFields()
+
   apply {
     from(rootProject.file("gradle/dependencies.gradle"))
   }
@@ -63,25 +65,6 @@ subprojects {
 
   group = property("GROUP")!!
   version = property("VERSION_NAME")!!
-
-  apply(plugin = "checkstyle")
-
-  extensions.findByType(CheckstyleExtension::class.java)!!.apply {
-    configFile = rootProject.file("checkstyle.xml")
-    configProperties = mapOf(
-        "checkstyle.cache.file" to rootProject.file("build/checkstyle.cache")
-    )
-  }
-
-  tasks.register("checkstyle", Checkstyle::class.java) {
-    source("src/main/java")
-    include("**/*.java")
-    classpath = files()
-  }
-
-  afterEvaluate {
-    tasks.findByName("check")?.dependsOn("checkstyle")
-  }
 
   tasks.withType<Test>().configureEach {
     systemProperty("updateTestFixtures", System.getProperty("updateTestFixtures"))
@@ -378,6 +361,14 @@ tasks.register("bintrayPublish") {
         "Cannot publish to bintray: ${it.code}\n: ${it.body?.string()}"
       }
     }
+  }
+}
+
+/* Jit pack configuration */
+fun Project.setJitPackFields() {
+  val android = extensions.findByType(com.android.build.gradle.BaseExtension::class.java)
+  if ( android as? com.android.build.gradle.LibraryExtension != null) {
+    apply(plugin = "com.github.dcendents.android-maven")
   }
 }
 
