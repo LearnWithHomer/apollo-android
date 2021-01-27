@@ -23,4 +23,6 @@ dependencies {
   implementation(groovy.util.Eval.x(project, "x.dep.gradlePublishPlugin"))
   // this plugin is added to the classpath but never applied, it is only used for the closeAndRelease code
   implementation(groovy.util.Eval.x(project, "x.dep.vanniktechPlugin"))
+  // this plugin was added to publish the artifacts to jit pack
+  implementation(groovy.util.Eval.x(project, "x.dep.mavenGradlePlugin"))
 }

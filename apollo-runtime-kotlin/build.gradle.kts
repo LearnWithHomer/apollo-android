@@ -38,35 +38,6 @@ kotlin {
         api(groovy.util.Eval.x(project, "x.dep.okHttp.okHttp4"))
       }
     }
-
-    val iosMain by getting {
-      dependsOn(commonMain)
-      dependencies {
-      }
-    }
-
-    val iosSimMain by getting {
-      dependsOn(iosMain)
-    }
-
-    val commonTest by getting {
-      dependencies {
-        implementation(kotlin("test-common"))
-        implementation(kotlin("test-annotations-common"))
-      }
-    }
-
-    val jvmTest by getting {
-      dependencies {
-        implementation(kotlin("test-junit"))
-        implementation(groovy.util.Eval.x(project, "x.dep.truth"))
-        implementation(groovy.util.Eval.x(project, "x.dep.okHttp.okHttp"))
-      }
-    }
-
-    val iosSimTest by getting {
-      dependsOn(commonTest)
-    }
   }
 }
 
