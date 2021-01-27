@@ -88,14 +88,6 @@ kotlin {
     val androidTest by getting {
       dependsOn(jvmTest)
     }
-
-    val iosTest by getting {
-      dependsOn(commonTest)
-    }
-
-    val iosSimTest by getting {
-      dependsOn(iosTest)
-    }
   }
 }
 
