@@ -13,7 +13,16 @@ buildscript {
 
 ApiCompatibility.configure(rootProject)
 
+/* Jit pack configuration */
+fun Project.setUpPublishToJitPackPlugin() {
+  val android = extensions.findByType(com.android.build.gradle.BaseExtension::class.java)
+  if ( android as? com.android.build.gradle.LibraryExtension != null) {
+    apply(plugin = "com.github.dcendents.android-maven")
+  }
+}
+
 subprojects {
+  setUpPublishToJitPackPlugin()
   apply {
     from(rootProject.file("gradle/dependencies.gradle"))
   }
