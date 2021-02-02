@@ -4,22 +4,6 @@ plugins {
 }
 
 kotlin {
-  @Suppress("ClassName")
-  data class iOSTarget(val name: String, val preset: String, val id: String)
-
-  val iosTargets = listOf(
-      iOSTarget("ios", "iosArm64", "ios-arm64"),
-      iOSTarget("iosSim", "iosX64", "ios-x64")
-  )
-
-  for ((targetName, presetName, id) in iosTargets) {
-    targetFromPreset(presets.getByName(presetName), targetName) {
-      mavenPublication {
-        artifactId = "${project.name}-$id"
-      }
-    }
-  }
-
   jvm {
     withJava()
   }
@@ -38,15 +22,6 @@ kotlin {
         implementation(groovy.util.Eval.x(project, "x.dep.cache"))
       }
     }
-
-    val jvmTest by getting {
-      dependsOn(jvmMain)
-      dependencies {
-        implementation(groovy.util.Eval.x(project, "x.dep.junit"))
-        implementation(groovy.util.Eval.x(project, "x.dep.truth"))
-      }
-    }
-
   }
 }
 
