@@ -13,7 +13,16 @@ buildscript {
 
 ApiCompatibility.configure(rootProject)
 
+/* Jit pack configuration */
+fun Project.setUpPublishToJitPackPlugin() {
+  val android = extensions.findByType(com.android.build.gradle.BaseExtension::class.java)
+  if ( android as? com.android.build.gradle.LibraryExtension != null) {
+    apply(plugin = "com.github.dcendents.android-maven")
+  }
+}
+
 subprojects {
+  setUpPublishToJitPackPlugin()
   apply {
     from(rootProject.file("gradle/dependencies.gradle"))
   }
@@ -72,25 +81,6 @@ subprojects {
 
   group = property("GROUP")!!
   version = property("VERSION_NAME")!!
-
-  apply(plugin = "checkstyle")
-
-  extensions.findByType(CheckstyleExtension::class.java)!!.apply {
-    configFile = rootProject.file("checkstyle.xml")
-    configProperties = mapOf(
-        "checkstyle.cache.file" to rootProject.file("build/checkstyle.cache")
-    )
-  }
-
-  tasks.register("checkstyle", Checkstyle::class.java) {
-    source("src/main/java")
-    include("**/*.java")
-    classpath = files()
-  }
-
-  afterEvaluate {
-    tasks.findByName("check")?.dependsOn("checkstyle")
-  }
 
   tasks.withType<Test>().configureEach {
     systemProperty("updateTestFixtures", System.getProperty("updateTestFixtures"))
