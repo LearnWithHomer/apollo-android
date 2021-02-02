@@ -215,7 +215,7 @@ fun Project.configurePublishing() {
 
       maven {
         name = "bintray"
-        url = uri("https://api.bintray.com/maven/apollographql/android/apollo/;override=1")
+        url = uri("https://api.bintray.com/maven/homer.apollographql/android/apollo/;override=1")
         credentials {
           username = System.getenv("BINTRAY_USER")
           password = System.getenv("BINTRAY_API_KEY")
@@ -357,7 +357,7 @@ tasks.register("sonatypeCloseAndReleaseRepository") {
         username = System.getenv("SONATYPE_NEXUS_USERNAME"),
         password = System.getenv("SONATYPE_NEXUS_PASSWORD"),
         baseUrl = "https://oss.sonatype.org/service/local/",
-        groupId = "com.apollographql"
+        groupId = "com.homer.apollographql"
     ).closeAndReleaseRepository()
   }
 }
@@ -370,7 +370,7 @@ tasks.register("bintrayPublish") {
       Request.Builder()
           .post(it)
           .header("Authorization", credentials)
-          .url("https://api.bintray.com/content/apollographql/android/apollo/$version/publish")
+          .url("https://api.bintray.com/content/homer.apollographql/android/apollo/$version/publish")
           .build()
     }.let {
       /**
@@ -389,4 +389,3 @@ tasks.register("bintrayPublish") {
     }
   }
 }
-

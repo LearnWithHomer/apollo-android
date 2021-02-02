@@ -16,7 +16,7 @@ fun Any.dot(key: String): Any {
 }
 
 metalava {
-  hiddenPackages += setOf("com.apollographql.apollo.gradle.internal")
+  hiddenPackages += setOf("com.homer.apollographql.apollo.gradle.internal")
 }
 
 dependencies {
@@ -48,18 +48,18 @@ tasks.withType<Test> {
 }
 
 pluginBundle {
-  website = "https://github.com/apollographql/apollo-android"
-  vcsUrl = "https://github.com/apollographql/apollo-android"
-  tags = listOf("graphql", "apollo", "apollographql", "kotlin", "java", "jvm", "android", "graphql-client")
+  website = "https://github.com/homer.apollographql/apollo-android"
+  vcsUrl = "https://github.com/homer.apollographql/apollo-android"
+  tags = listOf("graphql", "apollo", "homer.apollographql", "kotlin", "java", "jvm", "android", "graphql-client")
 }
 
 gradlePlugin {
   plugins {
     create("apolloGradlePlugin") {
-      id = "com.apollographql.apollo"
+      id = "com.homer.apollographql.apollo"
       displayName = "Apollo Android GraphQL client plugin."
       description = "Automatically generates typesafe java and kotlin models from your GraphQL files."
-      implementationClass = "com.apollographql.apollo.gradle.internal.ApolloPlugin"
+      implementationClass = "com.homer.apollographql.apollo.gradle.internal.ApolloPlugin"
     }
   }
 }

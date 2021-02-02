@@ -1,7 +1,7 @@
-import com.apollographql.apollo.gradle.api.ApolloExtension
-import com.apollographql.apollo.compiler.operationoutput.OperationOutput
-import com.apollographql.apollo.compiler.operationoutput.OperationDescriptor
-import com.apollographql.apollo.compiler.OperationOutputGenerator
+import com.homer.apollographql.apollo.gradle.api.ApolloExtension
+import com.homer.apollographql.apollo.compiler.operationoutput.OperationOutput
+import com.homer.apollographql.apollo.compiler.operationoutput.OperationDescriptor
+import com.homer.apollographql.apollo.compiler.OperationOutputGenerator
 
 buildscript {
   apply(from = "../../../gradle/dependencies.gradle")
@@ -19,7 +19,7 @@ buildscript {
 }
 
 apply(plugin = "org.jetbrains.kotlin.jvm")
-apply(plugin = "com.apollographql.apollo")
+apply(plugin = "com.homer.apollographql.apollo")
 
 repositories {
   maven {

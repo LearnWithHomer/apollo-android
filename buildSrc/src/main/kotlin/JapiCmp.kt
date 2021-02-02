@@ -24,7 +24,7 @@ object JapiCmp {
 
       val jar = "$artifact-$version.jar"
 
-      val url = "https://jcenter.bintray.com/com/apollographql/apollo/$artifact/$version/$jar"
+      val url = "https://jcenter.bintray.com/com/homer.apollographql/apollo/$artifact/$version/$jar"
       val client = OkHttpClient()
       val request = Request.Builder().get().url(url).build()
 
@@ -82,7 +82,7 @@ object JapiCmp {
 
 
   private fun latestVersion(): String {
-    return "https://api.bintray.com/packages/apollographql/android/apollo/versions/_latest"
+    return "https://api.bintray.com/packages/homer.apollographql/android/apollo/versions/_latest"
         .let {
           Request.Builder().url(it).build()
         }.let {
