@@ -211,7 +211,7 @@ fun Project.configurePublishing() {
 
       maven {
         name = "ossSnapshots"
-        url = uri("https://oss.sonatype.org/content/repositories/snapshots/")
+        url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
         credentials {
           username = System.getenv("SONATYPE_NEXUS_USERNAME")
           password = System.getenv("SONATYPE_NEXUS_PASSWORD")
@@ -220,7 +220,7 @@ fun Project.configurePublishing() {
 
       maven {
         name = "ossStaging"
-        url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+        url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
         credentials {
           username = System.getenv("SONATYPE_NEXUS_USERNAME")
           password = System.getenv("SONATYPE_NEXUS_PASSWORD")
@@ -292,15 +292,15 @@ fun isTag(): Boolean {
   return ref?.startsWith("refs/tags/") == true
 }
 
-fun isMain(): Boolean {
+fun shouldPublishSnapshots(): Boolean {
   val eventName = System.getenv("GITHUB_EVENT_NAME")
   val ref = System.getenv("GITHUB_REF")
 
-  return eventName == "push" && ref == "refs/heads/main"
+  return eventName == "push" && ref == "refs/heads/release-2.x"
 }
 
 tasks.register("publishSnapshotsIfNeeded") {
-  if (isMain()) {
+  if (shouldPublishSnapshots()) {
     project.logger.log(LogLevel.LIFECYCLE, "Deploying snapshot to OSS Snapshots...")
     dependsOn(subprojectTasks("publishAllPublicationsToOssSnapshotsRepository"))
   }
@@ -325,7 +325,7 @@ tasks.register("sonatypeCloseAndReleaseRepository") {
     com.vanniktech.maven.publish.nexus.Nexus(
         username = System.getenv("SONATYPE_NEXUS_USERNAME"),
         password = System.getenv("SONATYPE_NEXUS_PASSWORD"),
-        baseUrl = "https://oss.sonatype.org/service/local/",
+        baseUrl = "https://s01.oss.sonatype.org/service/local/",
         groupId = "com.apollographql"
     ).closeAndReleaseRepository()
   }

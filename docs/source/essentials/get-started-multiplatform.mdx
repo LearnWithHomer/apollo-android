@@ -5,8 +5,6 @@ title: Get started with Multiplatform (Experimental)
 import AddPlugin2 from "../shared/add-plugin.mdx"
 import DownloadSchema from "../shared/download-schema.mdx"
 
-> **Apollo Android 3 is available in alpha.** It is still in active development, and we'd love for folks to test it out. [See the v3 documentation](https://www.apollographql.com/docs/android/v3) and please [report any issues](https://github.com/apollographql/apollo-android/issues/new/choose)!
-
 **Note:** Multiplatform support is experimental and still under heavy development, expect the API to change. If you have feedback, we'd love to hear it. Please see [Contributing.md](https://github.com/apollographql/apollo-android/blob/main/Contributing.md) for how to get in touch.
 
 You can also check out the [multiplatform samples](https://github.com/apollographql/apollo-android/tree/main/samples) for more details.
@@ -27,7 +25,7 @@ Furthermore, the `js` target is also available for the `apollo-api` dependency -
 
 Multiplatform uses a different artifact from `apollo-runtime`. Its goal is to offer a coroutine-first API and is named `apollo-runtime-kotlin`:
 
-```kotlin:title=build.gradle.kts
+```kotlin title="build.gradle.kts"
 kotlin {
   // targets
   jvm()

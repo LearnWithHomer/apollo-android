@@ -1,14 +1,7 @@
-
-# Apollo Android
-
-[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg?maxAge=2592000)](https://raw.githubusercontent.com/apollographql/apollo-android/main/LICENSE)
-[![Slack](https://img.shields.io/static/v1?label=kotlinlang&message=apollo-android&color=15a2f5&logo=slack)](https://app.slack.com/client/T09229ZC6/C01A6KM1SBZ)
-[![Join the community](https://img.shields.io/discourse/status?label=Join%20the%20community&server=https%3A%2F%2Fcommunity.apollographql.com)](http://community.apollographql.com/new-topic?category=Help&tags=mobile,client)
-[![CI](https://github.com/apollographql/apollo-android/workflows/CI/badge.svg)](https://github.com/apollographql/apollo-android/actions)
-[![Maven Central](https://img.shields.io/maven-central/v/com.apollographql.apollo/apollo-api)](https://repo1.maven.org/maven2/com/apollographql/apollo/)
-[![OSS Snapshots](https://img.shields.io/nexus/s/com.apollographql.apollo/apollo-api?server=https%3A%2F%2Fs01.oss.sonatype.org&label=oss-snapshots)](https://oss.sonatype.org/content/repositories/snapshots/com/apollographql/apollo/)
-
-> **Apollo Kotlin 3 is now available as a replacement for Apollo Android.** [See the documentation](https://www.apollographql.com/docs/kotlin/) including a [migration guide](https://www.apollographql.com/docs/kotlin/migration/3.0) from v2. Please [report any issues](https://github.com/apollographql/apollo-android/issues/new/choose)!
+---
+title: Introduction to Apollo Android
+description: A strongly-typed, caching GraphQL client for the JVM, Android and Kotlin multiplatform
+---
 
 Apollo Android is a GraphQL client that generates Java and Kotlin models from GraphQL queries. These models give you a type-safe API to work with GraphQL servers.  Apollo helps you keep your GraphQL query statements together, organized, and easy to access.
 
@@ -32,7 +25,7 @@ If you are new to GraphQL, check out [the tutorial](https://www.apollographql.co
 If you'd like to add Apollo Android to an existing project:
 
 * [Get started with Kotlin](https://www.apollographql.com/docs/android/essentials/get-started-kotlin) shows how to add Apollo Android to a Kotlin project.
-* [Get started with Java](https://www.apollographql.com/docs/android/essentials/get-started-java) shows how to add Apollo Android to a Java project.
+* [Get started with Java](https://www.apollographql.com/docs/kotlin/v2/essentials/get-started-java) shows how to add Apollo Android to a Java project.
 * [Get started with Multiplatform (Experimental)](https://www.apollographql.com/docs/android/essentials/get-started-multiplatform) shows how to add Apollo Android to a Multiplatform project. This is still under heavy development and APIs may change without warning.
 
 
@@ -53,7 +46,7 @@ Check the [changelog](https://github.com/apollographql/apollo-android/releases) 
 Releases are hosted on [Jcenter](https://jcenter.bintray.com/com/apollographql/apollo/) and [Maven Central](https://repo1.maven.org/maven2/com/apollographql/apollo/). The plugin is additionally hosted on the [Gradle Plugin Portal](https://plugins.gradle.org/plugin/com.apollographql.apollo)
 
 
-```groovy:title=build.gradle.kts
+```groovy title="build.gradle.kts"
 plugins {
   id("com.apollographql.apollo").version("x.y.z")
 }
@@ -87,7 +80,7 @@ dependencies {
 
 Latest development changes are available in Sonatype's snapshots repository:
 
-```kotlin:title=build.gradle.kts
+```kotlin title="build.gradle.kts"
 repositories {
   maven {
     url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
@@ -126,7 +119,7 @@ If you'd like to contribute, please see [Contributing.md](https://github.com/apo
 [Apollo](https://apollographql.com/) builds open-source software and a graph platform to unify GraphQL across your apps and services. We help you ship faster with:
 
 * [Apollo Studio](https://www.apollographql.com/studio/develop/) – A free, end-to-end platform for managing your GraphQL lifecycle. Track your GraphQL schemas in a hosted registry to create a source of truth for everything in your graph. Studio provides an IDE (Apollo Explorer) so you can explore data, collaborate on queries, observe usage, and safely make schema changes.
-* [Apollo Federation](https://www.apollographql.com/apollo-federation) – The industry-standard open architecture for building a distributed graph. Use Apollo’s gateway to compose a unified graph from multiple subgraphs, determine a query plan, and route requests across your services.
+* [Apollo Federation](https://www.apollographql.com/apollo-federation) – The industry-standard open architecture for building a distributed graph. Use Apollo’s open-source gateway to compose a unified graph from multiple subgraphs, determine a query plan, and route requests across your services.
 * [Apollo Client](https://www.apollographql.com/apollo-client/) – The most popular GraphQL client for the web. Apollo also builds and maintains [Apollo iOS](https://github.com/apollographql/apollo-ios) and [Apollo Android](https://github.com/apollographql/apollo-android).
 * [Apollo Server](https://www.apollographql.com/docs/apollo-server/) – A production-ready JavaScript GraphQL server that connects to any microservice, API, or database. Compatible with all popular JavaScript frameworks and deployable in serverless environments.
 
