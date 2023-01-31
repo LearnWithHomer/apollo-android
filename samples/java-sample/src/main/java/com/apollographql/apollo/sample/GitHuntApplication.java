@@ -9,7 +9,7 @@ import com.homer.apollographql.apollo.cache.normalized.CacheKeyResolver;
 import com.homer.apollographql.apollo.cache.normalized.NormalizedCacheFactory;
 import com.homer.apollographql.apollo.cache.normalized.lru.EvictionPolicy;
 import com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory;
-import com.homer.apollographql.apollo.cache.normalized.sql.SqlNormalizedCacheFactory;
+import om.homer.apollographql.apollo.cache.normalized.sql.SqlNormalizedCacheFactory;
 import com.homer.apollographql.apollo.subscription.WebSocketSubscriptionTransport;
 import okhttp3.OkHttpClient;
 import org.jetbrains.annotations.NotNull;
