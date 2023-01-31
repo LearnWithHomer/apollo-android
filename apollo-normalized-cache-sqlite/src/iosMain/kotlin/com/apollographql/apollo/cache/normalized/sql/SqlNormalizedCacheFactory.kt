@@ -1,7 +1,7 @@
-package com.apollographql.apollo.cache.normalized.sql
+package com.homer.apollographql.apollo.cache.normalized.sql
 
-import com.apollographql.apollo.cache.normalized.NormalizedCacheFactory
-import com.apollographql.apollo.cache.normalized.RecordFieldJsonAdapter
+import com.homer.apollographql.apollo.cache.normalized.NormalizedCacheFactory
+import com.homer.apollographql.apollo.cache.normalized.RecordFieldJsonAdapter
 import com.squareup.sqldelight.db.SqlDriver
 import com.squareup.sqldelight.drivers.native.NativeSqliteDriver
 

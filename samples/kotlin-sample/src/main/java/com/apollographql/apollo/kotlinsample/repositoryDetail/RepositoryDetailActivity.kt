@@ -1,4 +1,4 @@
-package com.apollographql.apollo.kotlinsample.repositoryDetail
+package com.homer.apollographql.apollo.kotlinsample.repositoryDetail
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -6,12 +6,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.apollographql.apollo.api.Response
-import com.apollographql.apollo.kotlinsample.GithubRepositoryDetailQuery
-import com.apollographql.apollo.kotlinsample.KotlinSampleApp
-import com.apollographql.apollo.kotlinsample.R
-import com.apollographql.apollo.kotlinsample.commits.CommitsActivity
-import com.apollographql.apollo.kotlinsample.data.GitHubDataSource
+import com.homer.apollographql.apollo.api.Response
+import com.homer.apollographql.apollo.kotlinsample.GithubRepositoryDetailQuery
+import com.homer.apollographql.apollo.kotlinsample.KotlinSampleApp
+import com.homer.apollographql.apollo.kotlinsample.R
+import com.homer.apollographql.apollo.kotlinsample.commits.CommitsActivity
+import com.homer.apollographql.apollo.kotlinsample.data.GitHubDataSource
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers

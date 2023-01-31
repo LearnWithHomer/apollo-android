@@ -5,10 +5,10 @@
 //
 package com.example.introspection_default_value.type
 
-import com.apollographql.apollo.api.Input
-import com.apollographql.apollo.api.InputType
-import com.apollographql.apollo.api.internal.InputFieldMarshaller
-import com.apollographql.apollo.api.internal.InputFieldWriter
+import com.homer.apollographql.apollo.api.Input
+import com.homer.apollographql.apollo.api.InputType
+import com.homer.apollographql.apollo.api.internal.InputFieldMarshaller
+import com.homer.apollographql.apollo.api.internal.InputFieldWriter
 import kotlin.Double
 import kotlin.Int
 import kotlin.String

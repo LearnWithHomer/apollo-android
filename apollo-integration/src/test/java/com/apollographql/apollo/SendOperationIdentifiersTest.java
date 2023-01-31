@@ -1,7 +1,7 @@
-package com.apollographql.apollo;
+package com.homer.apollographql.apollo;
 
-import com.apollographql.apollo.api.Input;
-import com.apollographql.apollo.integration.normalizer.HeroAndFriendsNamesQuery;
+import com.homer.apollographql.apollo.api.Input;
+import com.homer.apollographql.apollo.integration.normalizer.HeroAndFriendsNamesQuery;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -17,7 +17,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.mockwebserver.MockWebServer;
 
-import static com.apollographql.apollo.integration.normalizer.type.Episode.EMPIRE;
+import static com.homer.apollographql.apollo.integration.normalizer.type.Episode.EMPIRE;
 import static com.google.common.truth.Truth.assertThat;
 
 public class SendOperationIdentifiersTest {
@@ -89,9 +89,9 @@ public class SendOperationIdentifiersTest {
         server,
         "HeroAndFriendsNameResponse.json",
         apolloClient.query(heroAndFriendsNamesQuery),
-        new Predicate<com.apollographql.apollo.api.Response<HeroAndFriendsNamesQuery.Data>>() {
+        new Predicate<com.homer.apollographql.apollo.api.Response<HeroAndFriendsNamesQuery.Data>>() {
           @Override
-          public boolean test(com.apollographql.apollo.api.Response<HeroAndFriendsNamesQuery.Data> response) throws Exception {
+          public boolean test(com.homer.apollographql.apollo.api.Response<HeroAndFriendsNamesQuery.Data> response) throws Exception {
             return !response.hasErrors();
           }
         }

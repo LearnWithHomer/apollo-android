@@ -1,13 +1,13 @@
-package com.apollographql.apollo.sample.feed;
+package com.homer.apollographql.apollo.sample.feed;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.apollographql.apollo.sample.FeedQuery;
-import com.apollographql.apollo.sample.R;
-import com.apollographql.apollo.sample.fragment.RepositoryFragment;
+import com.homer.apollographql.apollo.sample.FeedQuery;
+import com.homer.apollographql.apollo.sample.R;
+import com.homer.apollographql.apollo.sample.fragment.RepositoryFragment;
 
 import java.util.Collections;
 import java.util.List;

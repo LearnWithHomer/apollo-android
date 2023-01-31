@@ -1,4 +1,4 @@
-package com.apollographql.apollo.kmpsample.data
+package com.homer.apollographql.apollo.kmpsample.data
 
 import kotlinx.coroutines.CancellableContinuation
 import kotlinx.coroutines.CoroutineDispatcher

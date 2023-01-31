@@ -1,9 +1,9 @@
-package com.apollographql.apollo
+package com.homer.apollographql.apollo
 
-import com.apollographql.apollo.api.Response
-import com.apollographql.apollo.fetcher.ApolloResponseFetchers.CACHE_ONLY
-import com.apollographql.apollo.fetcher.ApolloResponseFetchers.NETWORK_ONLY
-import com.apollographql.apollo.rx2.Rx2Apollo
+import com.homer.apollographql.apollo.api.Response
+import com.homer.apollographql.apollo.fetcher.ApolloResponseFetchers.CACHE_ONLY
+import com.homer.apollographql.apollo.fetcher.ApolloResponseFetchers.NETWORK_ONLY
+import com.homer.apollographql.apollo.rx2.Rx2Apollo
 import com.google.common.io.CharStreams
 import io.reactivex.functions.Predicate
 import okhttp3.mockwebserver.MockResponse

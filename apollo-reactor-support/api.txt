@@ -1,16 +1,16 @@
 // Signature format: 4.0
-package com.apollographql.apollo.reactor {
+package com.homer.apollographql.apollo.reactor {
 
   public final class KotlinExtensions {
   }
 
   public class ReactorApollo {
-    method public static <T> reactor.core.publisher.Mono<com.apollographql.apollo.api.Response<T!>!> from(com.apollographql.apollo.ApolloQueryWatcher<T!>);
-    method public static <T> reactor.core.publisher.Mono<com.apollographql.apollo.api.Response<T!>!> from(com.apollographql.apollo.ApolloCall<T!>);
-    method public static reactor.core.publisher.Mono<java.lang.Void!> from(com.apollographql.apollo.ApolloPrefetch);
-    method public static <T> reactor.core.publisher.Flux<com.apollographql.apollo.api.Response<T!>!> from(com.apollographql.apollo.ApolloSubscriptionCall<T!>);
-    method public static <T> reactor.core.publisher.Flux<com.apollographql.apollo.api.Response<T!>!> from(com.apollographql.apollo.ApolloSubscriptionCall<T!>, reactor.core.publisher.FluxSink.OverflowStrategy);
-    method public static <T> reactor.core.publisher.Mono<T!> from(com.apollographql.apollo.cache.normalized.ApolloStoreOperation<T!>);
+    method public static <T> reactor.core.publisher.Mono<com.homer.apollographql.apollo.api.Response<T!>!> from(ApolloQueryWatcher<T!>);
+    method public static <T> reactor.core.publisher.Mono<com.homer.apollographql.apollo.api.Response<T!>!> from(ApolloCall<T!>);
+    method public static reactor.core.publisher.Mono<java.lang.Void!> from(ApolloPrefetch);
+    method public static <T> reactor.core.publisher.Flux<com.homer.apollographql.apollo.api.Response<T!>!> from(ApolloSubscriptionCall<T!>);
+    method public static <T> reactor.core.publisher.Flux<com.homer.apollographql.apollo.api.Response<T!>!> from(ApolloSubscriptionCall<T!>, reactor.core.publisher.FluxSink.OverflowStrategy);
+    method public static <T> reactor.core.publisher.Mono<T!> from(com.homer.apollographql.apollo.cache.normalized.ApolloStoreOperation<T!>);
   }
 
 }

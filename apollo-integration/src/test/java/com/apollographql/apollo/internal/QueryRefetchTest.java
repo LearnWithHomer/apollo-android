@@ -1,21 +1,21 @@
-package com.apollographql.apollo.internal;
+package com.homer.apollographql.apollo.internal;
 
 
-import com.apollographql.apollo.ApolloCall;
-import com.apollographql.apollo.ApolloClient;
-import com.apollographql.apollo.ApolloQueryWatcher;
-import com.apollographql.apollo.IdFieldCacheKeyResolver;
-import com.apollographql.apollo.Utils;
-import com.apollographql.apollo.api.Response;
-import com.apollographql.apollo.cache.normalized.lru.EvictionPolicy;
-import com.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory;
-import com.apollographql.apollo.exception.ApolloException;
-import com.apollographql.apollo.integration.normalizer.CreateReviewMutation;
-import com.apollographql.apollo.integration.normalizer.ReviewsByEpisodeQuery;
-import com.apollographql.apollo.integration.normalizer.type.ColorInput;
-import com.apollographql.apollo.integration.normalizer.type.Episode;
-import com.apollographql.apollo.integration.normalizer.type.ReviewInput;
-import com.apollographql.apollo.rx2.Rx2Apollo;
+import com.homer.apollographql.apollo.ApolloCall;
+import com.homer.apollographql.apollo.ApolloClient;
+import com.homer.apollographql.apollo.ApolloQueryWatcher;
+import com.homer.apollographql.apollo.IdFieldCacheKeyResolver;
+import com.homer.apollographql.apollo.Utils;
+import com.homer.apollographql.apollo.api.Response;
+import com.homer.apollographql.apollo.cache.normalized.lru.EvictionPolicy;
+import com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory;
+import com.homer.apollographql.apollo.exception.ApolloException;
+import com.homer.apollographql.apollo.integration.normalizer.CreateReviewMutation;
+import com.homer.apollographql.apollo.integration.normalizer.ReviewsByEpisodeQuery;
+import com.homer.apollographql.apollo.integration.normalizer.type.ColorInput;
+import com.homer.apollographql.apollo.integration.normalizer.type.Episode;
+import com.homer.apollographql.apollo.integration.normalizer.type.ReviewInput;
+import com.homer.apollographql.apollo.rx2.Rx2Apollo;
 
 import org.junit.After;
 import org.junit.Before;
@@ -31,8 +31,8 @@ import okhttp3.Dispatcher;
 import okhttp3.OkHttpClient;
 import okhttp3.mockwebserver.MockWebServer;
 
-import static com.apollographql.apollo.fetcher.ApolloResponseFetchers.CACHE_ONLY;
-import static com.apollographql.apollo.fetcher.ApolloResponseFetchers.NETWORK_FIRST;
+import static com.homer.apollographql.apollo.fetcher.ApolloResponseFetchers.CACHE_ONLY;
+import static com.homer.apollographql.apollo.fetcher.ApolloResponseFetchers.NETWORK_FIRST;
 import static com.google.common.truth.Truth.assertThat;
 
 public class QueryRefetchTest {

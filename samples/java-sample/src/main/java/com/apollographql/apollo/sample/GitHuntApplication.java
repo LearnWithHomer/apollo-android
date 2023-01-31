@@ -1,16 +1,16 @@
-package com.apollographql.apollo.sample;
+package com.homer.apollographql.apollo.sample;
 
 import android.app.Application;
-import com.apollographql.apollo.ApolloClient;
-import com.apollographql.apollo.api.Operation;
-import com.apollographql.apollo.api.ResponseField;
-import com.apollographql.apollo.cache.normalized.CacheKey;
-import com.apollographql.apollo.cache.normalized.CacheKeyResolver;
-import com.apollographql.apollo.cache.normalized.NormalizedCacheFactory;
-import com.apollographql.apollo.cache.normalized.lru.EvictionPolicy;
-import com.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory;
-import com.apollographql.apollo.cache.normalized.sql.SqlNormalizedCacheFactory;
-import com.apollographql.apollo.subscription.WebSocketSubscriptionTransport;
+import com.homer.apollographql.apollo.ApolloClient;
+import com.homer.apollographql.apollo.api.Operation;
+import com.homer.apollographql.apollo.api.ResponseField;
+import com.homer.apollographql.apollo.cache.normalized.CacheKey;
+import com.homer.apollographql.apollo.cache.normalized.CacheKeyResolver;
+import com.homer.apollographql.apollo.cache.normalized.NormalizedCacheFactory;
+import com.homer.apollographql.apollo.cache.normalized.lru.EvictionPolicy;
+import com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory;
+import com.homer.apollographql.apollo.cache.normalized.sql.SqlNormalizedCacheFactory;
+import com.homer.apollographql.apollo.subscription.WebSocketSubscriptionTransport;
 import okhttp3.OkHttpClient;
 import org.jetbrains.annotations.NotNull;
 

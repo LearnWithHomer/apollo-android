@@ -1,9 +1,9 @@
-package com.apollographql.apollo
+package com.homer.apollographql.apollo
 
-import com.apollographql.apollo.api.ResponseField
-import com.apollographql.apollo.api.Operation
-import com.apollographql.apollo.cache.normalized.internal.RealCacheKeyBuilder
-import com.apollographql.apollo.integration.sealedclasses.type.Direction
+import com.homer.apollographql.apollo.api.ResponseField
+import com.homer.apollographql.apollo.api.Operation
+import com.homer.apollographql.apollo.cache.normalized.internal.RealCacheKeyBuilder
+import com.homer.apollographql.apollo.integration.sealedclasses.type.Direction
 import com.google.common.truth.Truth
 import org.junit.Test
 

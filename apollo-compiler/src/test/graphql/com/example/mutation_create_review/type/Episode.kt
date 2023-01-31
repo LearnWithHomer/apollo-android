@@ -5,7 +5,7 @@
 //
 package com.example.mutation_create_review.type
 
-import com.apollographql.apollo.api.EnumValue
+import com.homer.apollographql.apollo.api.EnumValue
 import kotlin.Deprecated
 import kotlin.String
 

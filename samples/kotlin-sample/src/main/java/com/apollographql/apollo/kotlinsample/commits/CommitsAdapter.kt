@@ -1,12 +1,12 @@
-package com.apollographql.apollo.kotlinsample.commits
+package com.homer.apollographql.apollo.kotlinsample.commits
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.apollographql.apollo.kotlinsample.GithubRepositoryCommitsQuery
-import com.apollographql.apollo.kotlinsample.R
+import com.homer.apollographql.apollo.kotlinsample.GithubRepositoryCommitsQuery
+import com.homer.apollographql.apollo.kotlinsample.R
 import kotlinx.android.synthetic.main.item_commit.view.*
 
 class CommitsAdapter : RecyclerView.Adapter<CommitsAdapter.ViewHolder>() {

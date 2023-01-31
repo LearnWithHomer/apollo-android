@@ -17,7 +17,7 @@ fun Any.dot(key: String): Any {
 }
 
 metalava {
-  hiddenPackages += setOf("com.apollographql.apollo.gradle.internal")
+  hiddenPackages += setOf("com.homer.apollographql.apollo.gradle.internal")
 }
 
 /**
@@ -83,7 +83,7 @@ shadowJarTask.configure {
    * - We do not ship kotlin-stdlib in the fat jar as it should be provided by Gradle already (see [addShadowImplementation])
    * - I'm hoping kotlin-reflect is also provided by Gradle. In the tests I've made, it looks like it is and relocating it fails
    * with java.lang.NoSuchMethodError: 'com.apollographql.relocated.kotlin.reflect.KClass kotlin.jvm.internal.Reflection.getOrCreateKotlinClass(java.lang.Class)
-   * - We do not relocate "com.apollographql.apollo.*" as the codegen has a lot of hardcoded strings inside that shouldn't be relocated
+   * - We do not relocate "com.homer.apollographql.apollo.*" as the codegen has a lot of hardcoded strings inside that shouldn't be relocated
    * as they are used at runtime
    * - If we relocate a deep dependency (such as okio), we must relocate all intermediate dependencies (such as moshi/okhttp) or else
    * this will clash with any other version in the classpath
@@ -142,10 +142,10 @@ pluginBundle {
 gradlePlugin {
   plugins {
     create("apolloGradlePlugin") {
-      id = "com.apollographql.apollo"
+      id = "com.homer.apollographql.apollo"
       displayName = "Apollo Android GraphQL client plugin."
       description = "Automatically generates typesafe java and kotlin models from your GraphQL files."
-      implementationClass = "com.apollographql.apollo.gradle.internal.ApolloPlugin"
+      implementationClass = "com.homer.apollographql.apollo.gradle.internal.ApolloPlugin"
     }
   }
 }

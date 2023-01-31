@@ -1,13 +1,13 @@
-package com.apollographql.apollo.performance
+package com.homer.apollographql.apollo.performance
 
-import com.apollographql.apollo.ApolloClient
-import com.apollographql.apollo.Utils.immediateExecutor
-import com.apollographql.apollo.Utils.immediateExecutorService
-import com.apollographql.apollo.api.internal.SimpleOperationResponseParser
-import com.apollographql.apollo.api.internal.json.JsonWriter
-import com.apollographql.apollo.fetcher.ApolloResponseFetchers
-import com.apollographql.apollo.integration.performance.GetFloatsQuery
-import com.apollographql.apollo.integration.performance.GetIntsQuery
+import com.homer.apollographql.apollo.ApolloClient
+import com.homer.apollographql.apollo.Utils.immediateExecutor
+import com.homer.apollographql.apollo.Utils.immediateExecutorService
+import com.homer.apollographql.apollo.api.internal.SimpleOperationResponseParser
+import com.homer.apollographql.apollo.api.internal.json.JsonWriter
+import com.homer.apollographql.apollo.fetcher.ApolloResponseFetchers
+import com.homer.apollographql.apollo.integration.performance.GetFloatsQuery
+import com.homer.apollographql.apollo.integration.performance.GetIntsQuery
 import kotlinx.coroutines.runBlocking
 import okhttp3.Dispatcher
 import okhttp3.OkHttpClient

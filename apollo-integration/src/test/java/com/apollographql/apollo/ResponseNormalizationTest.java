@@ -1,25 +1,25 @@
-package com.apollographql.apollo;
+package com.homer.apollographql.apollo;
 
-import com.apollographql.apollo.api.Input;
-import com.apollographql.apollo.api.Query;
-import com.apollographql.apollo.api.Response;
-import com.apollographql.apollo.cache.CacheHeaders;
-import com.apollographql.apollo.cache.normalized.CacheKey;
-import com.apollographql.apollo.cache.normalized.CacheReference;
-import com.apollographql.apollo.cache.normalized.NormalizedCache;
-import com.apollographql.apollo.cache.normalized.Record;
-import com.apollographql.apollo.cache.normalized.lru.EvictionPolicy;
-import com.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory;
-import com.apollographql.apollo.integration.httpcache.AllPlanetsQuery;
-import com.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery;
-import com.apollographql.apollo.integration.normalizer.HeroAndFriendsNamesQuery;
-import com.apollographql.apollo.integration.normalizer.HeroAndFriendsNamesWithIDForParentOnlyQuery;
-import com.apollographql.apollo.integration.normalizer.HeroAndFriendsNamesWithIDsQuery;
-import com.apollographql.apollo.integration.normalizer.HeroAppearsInQuery;
-import com.apollographql.apollo.integration.normalizer.HeroNameQuery;
-import com.apollographql.apollo.integration.normalizer.HeroParentTypeDependentFieldQuery;
-import com.apollographql.apollo.integration.normalizer.HeroTypeDependentAliasedFieldQuery;
-import com.apollographql.apollo.integration.normalizer.SameHeroTwiceQuery;
+import com.homer.apollographql.apollo.api.Input;
+import com.homer.apollographql.apollo.api.Query;
+import com.homer.apollographql.apollo.api.Response;
+import com.homer.apollographql.apollo.cache.CacheHeaders;
+import com.homer.apollographql.apollo.cache.normalized.CacheKey;
+import com.homer.apollographql.apollo.cache.normalized.CacheReference;
+import com.homer.apollographql.apollo.cache.normalized.NormalizedCache;
+import com.homer.apollographql.apollo.cache.normalized.Record;
+import com.homer.apollographql.apollo.cache.normalized.lru.EvictionPolicy;
+import com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory;
+import com.homer.apollographql.apollo.integration.httpcache.AllPlanetsQuery;
+import com.homer.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery;
+import com.homer.apollographql.apollo.integration.normalizer.HeroAndFriendsNamesQuery;
+import com.homer.apollographql.apollo.integration.normalizer.HeroAndFriendsNamesWithIDForParentOnlyQuery;
+import com.homer.apollographql.apollo.integration.normalizer.HeroAndFriendsNamesWithIDsQuery;
+import com.homer.apollographql.apollo.integration.normalizer.HeroAppearsInQuery;
+import com.homer.apollographql.apollo.integration.normalizer.HeroNameQuery;
+import com.homer.apollographql.apollo.integration.normalizer.HeroParentTypeDependentFieldQuery;
+import com.homer.apollographql.apollo.integration.normalizer.HeroTypeDependentAliasedFieldQuery;
+import com.homer.apollographql.apollo.integration.normalizer.SameHeroTwiceQuery;
 import io.reactivex.functions.Predicate;
 import okhttp3.Dispatcher;
 import okhttp3.OkHttpClient;
@@ -33,8 +33,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static com.apollographql.apollo.integration.normalizer.type.Episode.EMPIRE;
-import static com.apollographql.apollo.integration.normalizer.type.Episode.JEDI;
+import static com.homer.apollographql.apollo.integration.normalizer.type.Episode.EMPIRE;
+import static com.homer.apollographql.apollo.integration.normalizer.type.Episode.JEDI;
 import static com.google.common.truth.Truth.assertThat;
 
 public class ResponseNormalizationTest {

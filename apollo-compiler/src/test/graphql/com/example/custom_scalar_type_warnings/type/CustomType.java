@@ -5,7 +5,7 @@
 //
 package com.example.custom_scalar_type_warnings.type;
 
-import com.apollographql.apollo.api.ScalarType;
+import com.homer.apollographql.apollo.api.ScalarType;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;

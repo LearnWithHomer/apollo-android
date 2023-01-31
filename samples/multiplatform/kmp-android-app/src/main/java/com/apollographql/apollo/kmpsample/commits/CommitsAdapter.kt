@@ -1,11 +1,11 @@
-package com.apollographql.apollo.kmpsample.commits
+package com.homer.apollographql.apollo.kmpsample.commits
 
 import android.view.LayoutInflater
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.apollographql.apollo.kmpsample.GithubRepositoryCommitsQuery
-import com.apollographql.apollo.kmpsample.databinding.ItemCommitBinding
+import com.homer.apollographql.apollo.kmpsample.GithubRepositoryCommitsQuery
+import com.homer.apollographql.apollo.kmpsample.databinding.ItemCommitBinding
 
 class CommitsAdapter : RecyclerView.Adapter<CommitsAdapter.ViewHolder>() {
 

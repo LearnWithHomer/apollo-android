@@ -1,11 +1,11 @@
-package com.apollographql.apollo.sample.detail;
+package com.homer.apollographql.apollo.sample.detail;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.apollographql.apollo.sample.R;
+import com.homer.apollographql.apollo.sample.R;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

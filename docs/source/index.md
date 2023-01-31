@@ -39,16 +39,16 @@ The [JS Graphql IntelliJ Plugin](https://jimkyndemeyer.github.io/js-graphql-inte
 
 ## Releases
 
-The latest version is [![Maven Central](https://img.shields.io/maven-central/v/com.apollographql.apollo/apollo-api)](https://repo1.maven.org/maven2/com/apollographql/apollo/)
+The latest version is [![Maven Central](https://img.shields.io/maven-central/v/com.homer.apollographql.apollo/apollo-api)](https://repo1.maven.org/maven2/com/apollographql/apollo/)
 
 Check the [changelog](https://github.com/apollographql/apollo-android/releases) for the release history.
 
-Releases are hosted on [Jcenter](https://jcenter.bintray.com/com/apollographql/apollo/) and [Maven Central](https://repo1.maven.org/maven2/com/apollographql/apollo/). The plugin is additionally hosted on the [Gradle Plugin Portal](https://plugins.gradle.org/plugin/com.apollographql.apollo)
+Releases are hosted on [Jcenter](https://jcenter.bintray.com/com/apollographql/apollo/) and [Maven Central](https://repo1.maven.org/maven2/com/apollographql/apollo/). The plugin is additionally hosted on the [Gradle Plugin Portal](https://plugins.gradle.org/plugin/com.homer.apollographql.apollo)
 
 
 ```groovy title="build.gradle.kts"
 plugins {
-  id("com.apollographql.apollo").version("x.y.z")
+  id("com.homer.apollographql.apollo").version("x.y.z")
 }
 
 repositories {
@@ -56,23 +56,23 @@ repositories {
 }
 
 dependencies {
-  implementation("com.apollographql.apollo:apollo-runtime:x.y.z")
+  implementation("com.homer.apollographql.apollo:apollo-runtime:x.y.z")
 
   // optional: if you want to use the normalized cache
-  implementation("com.apollographql.apollo:apollo-normalized-cache-sqlite:x.y.z")
+  implementation("com.homer.apollographql.apollo:apollo-normalized-cache-sqlite:x.y.z")
   // optional: for coroutines support
-  implementation("com.apollographql.apollo:apollo-coroutines-support:x.y.z")
+  implementation("com.homer.apollographql.apollo:apollo-coroutines-support:x.y.z")
   // optional: for Mutiny support
-  implementation("com.apollographql.apollo:apollo-mutiny-support:x.y.z")
+  implementation("com.homer.apollographql.apollo:apollo-mutiny-support:x.y.z")
   // optional: for Reactor support
-  implementation("com.apollographql.apollo:apollo-reactor-support:x.y.z")
+  implementation("com.homer.apollographql.apollo:apollo-reactor-support:x.y.z")
   // optional: for RxJava3 support
-  implementation("com.apollographql.apollo:apollo-rx3-support:x.y.z")
+  implementation("com.homer.apollographql.apollo:apollo-rx3-support:x.y.z")
   // optional: Most of apollo-android does not depend on Android in practice and runs on any JVM or on Kotlin native. apollo-android-support contains a few Android-only helper classes. For an example to send logs to logcat or run callbacks on the main thread.
-  implementation("com.apollographql.apollo:apollo-android-support:x.y.z")
+  implementation("com.homer.apollographql.apollo:apollo-android-support:x.y.z")
   // optional: if you just want the generated models and parsers and write your own HTTP code/cache code, you can remove apollo-runtime
   // and use apollo-api instead
-  implementation("com.apollographql.apollo:apollo-api:x.y.z")
+  implementation("com.homer.apollographql.apollo:apollo-api:x.y.z")
 }
 ```
 

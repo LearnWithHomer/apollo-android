@@ -1,4 +1,4 @@
-package com.apollographql.apollo.cache.normalized.sql
+package com.homer.apollographql.apollo.cache.normalized.sql
 
 import android.content.Context
 import com.squareup.sqldelight.android.AndroidSqliteDriver

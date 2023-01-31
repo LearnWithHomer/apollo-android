@@ -1,14 +1,14 @@
-package com.apollographql.apollo.internal.fetcher;
+package com.homer.apollographql.apollo.internal.fetcher;
 
-import com.apollographql.apollo.ApolloCall;
-import com.apollographql.apollo.ApolloClient;
-import com.apollographql.apollo.IdFieldCacheKeyResolver;
-import com.apollographql.apollo.Utils;
-import com.apollographql.apollo.api.Response;
-import com.apollographql.apollo.cache.normalized.lru.EvictionPolicy;
-import com.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory;
-import com.apollographql.apollo.exception.ApolloException;
-import com.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery;
+import com.homer.apollographql.apollo.ApolloCall;
+import com.homer.apollographql.apollo.ApolloClient;
+import com.homer.apollographql.apollo.IdFieldCacheKeyResolver;
+import com.homer.apollographql.apollo.Utils;
+import com.homer.apollographql.apollo.api.Response;
+import com.homer.apollographql.apollo.cache.normalized.lru.EvictionPolicy;
+import com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory;
+import com.homer.apollographql.apollo.exception.ApolloException;
+import com.homer.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery;
 
 import org.junit.After;
 import org.junit.Before;

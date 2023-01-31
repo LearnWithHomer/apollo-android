@@ -1,14 +1,14 @@
-package com.apollographql.apollo;
+package com.homer.apollographql.apollo;
 
-import com.apollographql.apollo.api.Response;
-import com.apollographql.apollo.api.cache.http.HttpCache;
-import com.apollographql.apollo.api.cache.http.HttpCachePolicy;
-import com.apollographql.apollo.cache.http.ApolloHttpCache;
-import com.apollographql.apollo.cache.http.DiskLruHttpCacheStore;
-import com.apollographql.apollo.cache.http.internal.FileSystem;
-import com.apollographql.apollo.exception.ApolloException;
-import com.apollographql.apollo.integration.httpcache.AllPlanetsQuery;
-import com.apollographql.apollo.rx2.Rx2Apollo;
+import com.homer.apollographql.apollo.api.Response;
+import com.homer.apollographql.apollo.api.cache.http.HttpCache;
+import com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy;
+import com.homer.apollographql.apollo.cache.http.ApolloHttpCache;
+import com.homer.apollographql.apollo.cache.http.DiskLruHttpCacheStore;
+import com.homer.apollographql.apollo.cache.http.internal.FileSystem;
+import com.homer.apollographql.apollo.exception.ApolloException;
+import com.homer.apollographql.apollo.integration.httpcache.AllPlanetsQuery;
+import com.homer.apollographql.apollo.rx2.Rx2Apollo;
 import io.reactivex.functions.Predicate;
 import java.io.File;
 import java.io.IOException;

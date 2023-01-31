@@ -1,11 +1,11 @@
-package com.apollographql.apollo.directives
+package com.homer.apollographql.apollo.directives
 
-import com.apollographql.apollo.integration.directives.MyQuery
+import com.homer.apollographql.apollo.integration.directives.MyQuery
 import com.google.common.truth.Truth
 import okio.buffer
 import okio.source
 import org.junit.Test
-import com.apollographql.apollo.api.Input
+import com.homer.apollographql.apollo.api.Input
 
 class DirectivesTest {
   @Test

@@ -1,9 +1,9 @@
-package com.apollographql.apollo;
+package com.homer.apollographql.apollo;
 
-import com.apollographql.apollo.api.Operation;
-import com.apollographql.apollo.api.ResponseField;
-import com.apollographql.apollo.cache.normalized.CacheKey;
-import com.apollographql.apollo.cache.normalized.CacheKeyResolver;
+import com.homer.apollographql.apollo.api.Operation;
+import com.homer.apollographql.apollo.api.ResponseField;
+import com.homer.apollographql.apollo.cache.normalized.CacheKey;
+import com.homer.apollographql.apollo.cache.normalized.CacheKeyResolver;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;

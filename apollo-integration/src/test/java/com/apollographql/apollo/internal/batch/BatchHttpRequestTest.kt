@@ -1,14 +1,14 @@
-package com.apollographql.apollo.internal.batch
+package com.homer.apollographql.apollo.internal.batch
 
-import com.apollographql.apollo.Utils
-import com.apollographql.apollo.api.ScalarTypeAdapters
-import com.apollographql.apollo.exception.ApolloException
-import com.apollographql.apollo.integration.httpcache.AllPlanetsQuery
-import com.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery
-import com.apollographql.apollo.integration.normalizer.type.Episode
-import com.apollographql.apollo.interceptor.ApolloInterceptor
-import com.apollographql.apollo.internal.interceptor.ApolloServerInterceptor
-import com.apollographql.apollo.request.RequestHeaders
+import com.homer.apollographql.apollo.Utils
+import com.homer.apollographql.apollo.api.ScalarTypeAdapters
+import com.homer.apollographql.apollo.exception.ApolloException
+import com.homer.apollographql.apollo.integration.httpcache.AllPlanetsQuery
+import com.homer.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery
+import com.homer.apollographql.apollo.integration.normalizer.type.Episode
+import com.homer.apollographql.apollo.interceptor.ApolloInterceptor
+import com.homer.apollographql.apollo.internal.interceptor.ApolloServerInterceptor
+import com.homer.apollographql.apollo.request.RequestHeaders
 import com.google.common.base.Predicate
 import com.google.common.truth.Truth.assertThat
 import junit.framework.Assert

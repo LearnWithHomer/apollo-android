@@ -1,4 +1,4 @@
-package com.apollographql.apollo.sample.feed;
+package com.homer.apollographql.apollo.sample.feed;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,23 +11,23 @@ import android.widget.ProgressBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.apollographql.apollo.ApolloCall;
-import com.apollographql.apollo.ApolloCallback;
-import com.apollographql.apollo.api.Response;
-import com.apollographql.apollo.exception.ApolloException;
-import com.apollographql.apollo.fetcher.ApolloResponseFetchers;
-import com.apollographql.apollo.sample.FeedQuery;
-import com.apollographql.apollo.sample.GitHuntApplication;
-import com.apollographql.apollo.sample.R;
-import com.apollographql.apollo.sample.detail.GitHuntEntryDetailActivity;
-import com.apollographql.apollo.sample.type.FeedType;
+import com.homer.apollographql.apollo.ApolloCall;
+import com.homer.apollographql.apollo.ApolloCallback;
+import com.homer.apollographql.apollo.api.Response;
+import com.homer.apollographql.apollo.exception.ApolloException;
+import com.homer.apollographql.apollo.fetcher.ApolloResponseFetchers;
+import com.homer.apollographql.apollo.sample.FeedQuery;
+import com.homer.apollographql.apollo.sample.GitHuntApplication;
+import com.homer.apollographql.apollo.sample.R;
+import com.homer.apollographql.apollo.sample.detail.GitHuntEntryDetailActivity;
+import com.homer.apollographql.apollo.sample.type.FeedType;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static com.apollographql.apollo.sample.FeedQuery.FeedEntry;
+import static com.homer.apollographql.apollo.sample.FeedQuery.FeedEntry;
 
 public class GitHuntFeedActivity extends AppCompatActivity implements GitHuntNavigator {
 

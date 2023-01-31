@@ -1,13 +1,13 @@
-package com.apollographql.apollo;
+package com.homer.apollographql.apollo;
 
-import com.apollographql.apollo.api.Response;
-import com.apollographql.apollo.cache.normalized.Record;
-import com.apollographql.apollo.exception.ApolloException;
-import com.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery;
-import com.apollographql.apollo.integration.normalizer.type.Episode;
-import com.apollographql.apollo.interceptor.ApolloInterceptor;
-import com.apollographql.apollo.interceptor.ApolloInterceptorChain;
-import com.apollographql.apollo.internal.interceptor.RealApolloInterceptorChain;
+import com.homer.apollographql.apollo.api.Response;
+import com.homer.apollographql.apollo.cache.normalized.Record;
+import com.homer.apollographql.apollo.exception.ApolloException;
+import com.homer.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery;
+import com.homer.apollographql.apollo.integration.normalizer.type.Episode;
+import com.homer.apollographql.apollo.interceptor.ApolloInterceptor;
+import com.homer.apollographql.apollo.interceptor.ApolloInterceptorChain;
+import com.homer.apollographql.apollo.internal.interceptor.RealApolloInterceptorChain;
 import okhttp3.MediaType;
 import okhttp3.Protocol;
 import okhttp3.Request;
@@ -22,8 +22,8 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static com.apollographql.apollo.interceptor.ApolloInterceptor.CallBack;
-import static com.apollographql.apollo.interceptor.ApolloInterceptor.InterceptorResponse;
+import static com.homer.apollographql.apollo.interceptor.ApolloInterceptor.CallBack;
+import static com.homer.apollographql.apollo.interceptor.ApolloInterceptor.InterceptorResponse;
 import static com.google.common.truth.Truth.assertThat;
 
 public class ApolloInterceptorChainTest {

@@ -1,11 +1,11 @@
-package com.apollographql.apollo
+package com.homer.apollographql.apollo
 
-import com.apollographql.apollo.Utils.immediateExecutor
-import com.apollographql.apollo.Utils.immediateExecutorService
-import com.apollographql.apollo.Utils.readFileToString
-import com.apollographql.apollo.api.Response
-import com.apollographql.apollo.exception.ApolloException
-import com.apollographql.apollo.integration.httpcache.AllPlanetsQuery
+import com.homer.apollographql.apollo.Utils.immediateExecutor
+import com.homer.apollographql.apollo.Utils.immediateExecutorService
+import com.homer.apollographql.apollo.Utils.readFileToString
+import com.homer.apollographql.apollo.api.Response
+import com.homer.apollographql.apollo.exception.ApolloException
+import com.homer.apollographql.apollo.integration.httpcache.AllPlanetsQuery
 import okhttp3.*
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer

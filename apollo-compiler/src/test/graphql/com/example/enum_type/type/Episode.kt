@@ -5,7 +5,7 @@
 //
 package com.example.enum_type.type
 
-import com.apollographql.apollo.api.EnumValue
+import com.homer.apollographql.apollo.api.EnumValue
 import kotlin.String
 
 /**

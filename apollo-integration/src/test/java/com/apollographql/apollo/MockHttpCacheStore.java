@@ -1,8 +1,8 @@
-package com.apollographql.apollo;
+package com.homer.apollographql.apollo;
 
-import com.apollographql.apollo.api.cache.http.HttpCacheRecord;
-import com.apollographql.apollo.api.cache.http.HttpCacheRecordEditor;
-import com.apollographql.apollo.api.cache.http.HttpCacheStore;
+import com.homer.apollographql.apollo.api.cache.http.HttpCacheRecord;
+import com.homer.apollographql.apollo.api.cache.http.HttpCacheRecordEditor;
+import com.homer.apollographql.apollo.api.cache.http.HttpCacheStore;
 
 import java.io.IOException;
 

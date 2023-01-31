@@ -5,10 +5,10 @@
 //
 package com.example.mutation_create_review_semantic_naming.type
 
-import com.apollographql.apollo.api.Input
-import com.apollographql.apollo.api.InputType
-import com.apollographql.apollo.api.internal.InputFieldMarshaller
-import com.apollographql.apollo.api.internal.InputFieldWriter
+import com.homer.apollographql.apollo.api.Input
+import com.homer.apollographql.apollo.api.InputType
+import com.homer.apollographql.apollo.api.internal.InputFieldMarshaller
+import com.homer.apollographql.apollo.api.internal.InputFieldWriter
 import kotlin.Any
 import kotlin.Boolean
 import kotlin.Int

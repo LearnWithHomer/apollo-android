@@ -1,8 +1,8 @@
-package com.apollographql.apollo.internal.fetcher;
+package com.homer.apollographql.apollo.internal.fetcher;
 
-import com.apollographql.apollo.exception.ApolloException;
-import com.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery;
-import com.apollographql.apollo.integration.normalizer.type.Episode;
+import com.homer.apollographql.apollo.exception.ApolloException;
+import com.homer.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery;
+import com.homer.apollographql.apollo.integration.normalizer.type.Episode;
 
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ import java.util.concurrent.TimeoutException;
 
 import okhttp3.mockwebserver.MockResponse;
 
-import static com.apollographql.apollo.fetcher.ApolloResponseFetchers.NETWORK_FIRST;
+import static com.homer.apollographql.apollo.fetcher.ApolloResponseFetchers.NETWORK_FIRST;
 import static com.google.common.truth.Truth.assertThat;
 import static java.net.HttpURLConnection.HTTP_INTERNAL_ERROR;
 

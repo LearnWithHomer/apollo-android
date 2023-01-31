@@ -1,18 +1,18 @@
-package com.apollographql.apollo.internal.fetcher;
+package com.homer.apollographql.apollo.internal.fetcher;
 
-import com.apollographql.apollo.api.Response;
-import com.apollographql.apollo.exception.ApolloException;
-import com.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery;
-import com.apollographql.apollo.integration.normalizer.type.Episode;
-import com.apollographql.apollo.rx2.Rx2Apollo;
+import com.homer.apollographql.apollo.api.Response;
+import com.homer.apollographql.apollo.exception.ApolloException;
+import com.homer.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery;
+import com.homer.apollographql.apollo.integration.normalizer.type.Episode;
+import com.homer.apollographql.apollo.rx2.Rx2Apollo;
 
 import org.junit.Test;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-import static com.apollographql.apollo.fetcher.ApolloResponseFetchers.CACHE_ONLY;
-import static com.apollographql.apollo.fetcher.ApolloResponseFetchers.NETWORK_ONLY;
+import static com.homer.apollographql.apollo.fetcher.ApolloResponseFetchers.CACHE_ONLY;
+import static com.homer.apollographql.apollo.fetcher.ApolloResponseFetchers.NETWORK_ONLY;
 import static com.google.common.truth.Truth.assertThat;
 
 public class CacheOnlyFetcherTest extends BaseFetcherTest {

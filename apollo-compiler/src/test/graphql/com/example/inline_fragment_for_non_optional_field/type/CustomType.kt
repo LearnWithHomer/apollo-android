@@ -5,7 +5,7 @@
 //
 package com.example.inline_fragment_for_non_optional_field.type
 
-import com.apollographql.apollo.api.ScalarType
+import com.homer.apollographql.apollo.api.ScalarType
 import kotlin.String
 
 enum class CustomType : ScalarType {

@@ -1,6 +1,6 @@
-package com.apollographql.apollo.cache.normalized.sql
+package com.homer.apollographql.apollo.cache.normalized.sql
 
-import com.apollographql.apollo.cache.normalized.NormalizedCacheFactory
+import com.homer.apollographql.apollo.cache.normalized.NormalizedCacheFactory
 import com.squareup.sqldelight.db.SqlDriver
 
 expect class SqlNormalizedCacheFactory internal constructor(

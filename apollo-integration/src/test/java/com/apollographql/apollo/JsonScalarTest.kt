@@ -1,12 +1,12 @@
-package com.apollographql.apollo
+package com.homer.apollographql.apollo
 
-import com.apollographql.apollo.integration.normalizer.GetJsonScalarQuery
-import com.apollographql.apollo.Utils.cacheAndAssertCachedResponse
-import com.apollographql.apollo.Utils.immediateExecutor
-import com.apollographql.apollo.Utils.immediateExecutorService
-import com.apollographql.apollo.api.BigDecimal
-import com.apollographql.apollo.cache.normalized.lru.EvictionPolicy
-import com.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory
+import com.homer.apollographql.apollo.integration.normalizer.GetJsonScalarQuery
+import com.homer.apollographql.apollo.Utils.cacheAndAssertCachedResponse
+import com.homer.apollographql.apollo.Utils.immediateExecutor
+import com.homer.apollographql.apollo.Utils.immediateExecutorService
+import com.homer.apollographql.apollo.api.BigDecimal
+import com.homer.apollographql.apollo.cache.normalized.lru.EvictionPolicy
+import com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory
 import com.google.common.truth.Truth.assertThat
 import okhttp3.Dispatcher
 import okhttp3.OkHttpClient

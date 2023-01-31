@@ -5,8 +5,8 @@
 //
 package com.example.input_field_default_value.type
 
-import com.apollographql.apollo.api.InputType
-import com.apollographql.apollo.api.internal.InputFieldMarshaller
+import com.homer.apollographql.apollo.api.InputType
+import com.homer.apollographql.apollo.api.internal.InputFieldMarshaller
 import kotlin.Suppress
 
 @Suppress("NAME_SHADOWING", "UNUSED_ANONYMOUS_PARAMETER", "LocalVariableName",

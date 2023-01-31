@@ -1,10 +1,10 @@
-package com.apollographql.apollo;
+package com.homer.apollographql.apollo;
 
-import com.apollographql.apollo.api.cache.http.HttpCacheRecord;
-import com.apollographql.apollo.api.cache.http.HttpCacheRecordEditor;
-import com.apollographql.apollo.api.cache.http.HttpCacheStore;
-import com.apollographql.apollo.cache.http.internal.DiskLruCache;
-import com.apollographql.apollo.cache.http.internal.FileSystem;
+import com.homer.apollographql.apollo.api.cache.http.HttpCacheRecord;
+import com.homer.apollographql.apollo.api.cache.http.HttpCacheRecordEditor;
+import com.homer.apollographql.apollo.api.cache.http.HttpCacheStore;
+import com.homer.apollographql.apollo.cache.http.internal.DiskLruCache;
+import com.homer.apollographql.apollo.cache.http.internal.FileSystem;
 import java.io.File;
 import java.io.IOException;
 import okio.Buffer;

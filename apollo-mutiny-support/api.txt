@@ -1,16 +1,16 @@
 // Signature format: 4.0
-package com.apollographql.apollo.mutiny {
+package com.homer.apollographql.apollo.mutiny {
 
   public final class KotlinExtensions {
   }
 
   public class MutinyApollo {
-    method public static <T> io.smallrye.mutiny.Uni<com.apollographql.apollo.api.Response<T!>!> from(com.apollographql.apollo.ApolloQueryWatcher<T!>);
-    method public static <T> io.smallrye.mutiny.Uni<com.apollographql.apollo.api.Response<T!>!> from(com.apollographql.apollo.ApolloCall<T!>);
-    method public static io.smallrye.mutiny.Uni<java.lang.Void!> from(com.apollographql.apollo.ApolloPrefetch);
-    method public static <T> io.smallrye.mutiny.Multi<com.apollographql.apollo.api.Response<T!>!> from(com.apollographql.apollo.ApolloSubscriptionCall<T!>);
-    method public static <T> io.smallrye.mutiny.Multi<com.apollographql.apollo.api.Response<T!>!> from(com.apollographql.apollo.ApolloSubscriptionCall<T!>, io.smallrye.mutiny.subscription.BackPressureStrategy);
-    method public static <T> io.smallrye.mutiny.Uni<T!> from(com.apollographql.apollo.cache.normalized.ApolloStoreOperation<T!>);
+    method public static <T> io.smallrye.mutiny.Uni<com.homer.apollographql.apollo.api.Response<T!>!> from(ApolloQueryWatcher<T!>);
+    method public static <T> io.smallrye.mutiny.Uni<com.homer.apollographql.apollo.api.Response<T!>!> from(ApolloCall<T!>);
+    method public static io.smallrye.mutiny.Uni<java.lang.Void!> from(ApolloPrefetch);
+    method public static <T> io.smallrye.mutiny.Multi<com.homer.apollographql.apollo.api.Response<T!>!> from(ApolloSubscriptionCall<T!>);
+    method public static <T> io.smallrye.mutiny.Multi<com.homer.apollographql.apollo.api.Response<T!>!> from(ApolloSubscriptionCall<T!>, io.smallrye.mutiny.subscription.BackPressureStrategy);
+    method public static <T> io.smallrye.mutiny.Uni<T!> from(com.homer.apollographql.apollo.cache.normalized.ApolloStoreOperation<T!>);
   }
 
 }

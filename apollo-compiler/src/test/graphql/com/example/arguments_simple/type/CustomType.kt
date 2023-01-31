@@ -5,7 +5,7 @@
 //
 package com.example.arguments_simple.type
 
-import com.apollographql.apollo.api.ScalarType
+import com.homer.apollographql.apollo.api.ScalarType
 import kotlin.String
 
 enum class CustomType : ScalarType {

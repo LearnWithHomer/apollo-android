@@ -1,11 +1,11 @@
-package com.apollographql.apollo.internal.batch
+package com.homer.apollographql.apollo.internal.batch
 
-import com.apollographql.apollo.Utils
-import com.apollographql.apollo.api.Input
-import com.apollographql.apollo.api.internal.ApolloLogger
-import com.apollographql.apollo.exception.ApolloException
-import com.apollographql.apollo.integration.interceptor.AllFilmsQuery
-import com.apollographql.apollo.interceptor.ApolloInterceptor
+import com.homer.apollographql.apollo.Utils
+import com.homer.apollographql.apollo.api.Input
+import com.homer.apollographql.apollo.api.internal.ApolloLogger
+import com.homer.apollographql.apollo.exception.ApolloException
+import com.homer.apollographql.apollo.integration.interceptor.AllFilmsQuery
+import com.homer.apollographql.apollo.interceptor.ApolloInterceptor
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito.mock

@@ -1,7 +1,7 @@
-package com.apollographql.apollo
+package com.homer.apollographql.apollo
 
-import com.apollographql.apollo.compiler.operationoutput.OperationOutput
-import com.apollographql.apollo.integration.httpcache.AllFilmsQuery
+import com.homer.apollographql.apollo.compiler.operationoutput.OperationOutput
+import com.homer.apollographql.apollo.integration.httpcache.AllFilmsQuery
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import java.io.File

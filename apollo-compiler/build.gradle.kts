@@ -36,7 +36,7 @@ abstract class GeneratePluginVersion : DefaultTask() {
     val versionFile = outputFile.asFile.get()
     versionFile.parentFile.mkdirs()
     versionFile.writeText("""// Generated file. Do not edit!
-package com.apollographql.apollo.compiler
+package com.homer.apollographql.apollo.compiler
 val VERSION = "${project.version}"
 """)
   }

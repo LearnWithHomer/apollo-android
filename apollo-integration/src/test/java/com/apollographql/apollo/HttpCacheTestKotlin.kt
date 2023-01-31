@@ -1,11 +1,11 @@
-package com.apollographql.apollo
+package com.homer.apollographql.apollo
 
-import com.apollographql.apollo.Utils.mockResponse
-import com.apollographql.apollo.api.cache.http.HttpCachePolicy
-import com.apollographql.apollo.cache.http.ApolloHttpCache
-import com.apollographql.apollo.cache.http.DiskLruHttpCacheStore
-import com.apollographql.apollo.coroutines.await
-import com.apollographql.apollo.integration.httpcache.AllPlanetsQuery
+import com.homer.apollographql.apollo.Utils.mockResponse
+import com.homer.apollographql.apollo.api.cache.http.HttpCachePolicy
+import com.homer.apollographql.apollo.cache.http.ApolloHttpCache
+import com.homer.apollographql.apollo.cache.http.DiskLruHttpCacheStore
+import com.homer.apollographql.apollo.coroutines.await
+import com.homer.apollographql.apollo.integration.httpcache.AllPlanetsQuery
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockResponse

@@ -5,7 +5,7 @@
 //
 package com.example.fragment_package_name.another.type;
 
-import com.apollographql.apollo.api.ScalarType;
+import com.homer.apollographql.apollo.api.ScalarType;
 import java.lang.Override;
 import java.lang.String;
 

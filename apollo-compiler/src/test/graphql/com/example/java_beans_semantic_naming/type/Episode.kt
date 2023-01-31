@@ -5,7 +5,7 @@
 //
 package com.example.java_beans_semantic_naming.type
 
-import com.apollographql.apollo.api.EnumValue
+import com.homer.apollographql.apollo.api.EnumValue
 import kotlin.Deprecated
 import kotlin.String
 

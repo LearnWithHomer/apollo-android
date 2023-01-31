@@ -1,25 +1,25 @@
-package com.apollographql.apollo;
+package com.homer.apollographql.apollo;
 
-import com.apollographql.apollo.api.CustomTypeAdapter;
-import com.apollographql.apollo.api.CustomTypeValue;
-import com.apollographql.apollo.api.Error;
-import com.apollographql.apollo.api.Input;
-import com.apollographql.apollo.api.OperationDataJsonSerializer;
-import com.apollographql.apollo.api.Response;
-import com.apollographql.apollo.api.ScalarType;
-import com.apollographql.apollo.api.ScalarTypeAdapters;
-import com.apollographql.apollo.cache.normalized.lru.EvictionPolicy;
-import com.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory;
-import com.apollographql.apollo.exception.ApolloException;
-import com.apollographql.apollo.fetcher.ApolloResponseFetchers;
-import com.apollographql.apollo.integration.httpcache.AllFilmsQuery;
-import com.apollographql.apollo.integration.httpcache.AllPlanetsQuery;
-import com.apollographql.apollo.integration.httpcache.type.CustomType;
-import com.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery;
-import com.apollographql.apollo.integration.normalizer.HeroNameQuery;
-import com.apollographql.apollo.http.OkHttpExecutionContext;
-import com.apollographql.apollo.response.OperationResponseParser;
-import com.apollographql.apollo.rx2.Rx2Apollo;
+import com.homer.apollographql.apollo.api.CustomTypeAdapter;
+import com.homer.apollographql.apollo.api.CustomTypeValue;
+import com.homer.apollographql.apollo.api.Error;
+import com.homer.apollographql.apollo.api.Input;
+import com.homer.apollographql.apollo.api.OperationDataJsonSerializer;
+import com.homer.apollographql.apollo.api.Response;
+import com.homer.apollographql.apollo.api.ScalarType;
+import com.homer.apollographql.apollo.api.ScalarTypeAdapters;
+import com.homer.apollographql.apollo.cache.normalized.lru.EvictionPolicy;
+import com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory;
+import com.homer.apollographql.apollo.exception.ApolloException;
+import com.homer.apollographql.apollo.fetcher.ApolloResponseFetchers;
+import com.homer.apollographql.apollo.integration.httpcache.AllFilmsQuery;
+import com.homer.apollographql.apollo.integration.httpcache.AllPlanetsQuery;
+import com.homer.apollographql.apollo.integration.httpcache.type.CustomType;
+import com.homer.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery;
+import com.homer.apollographql.apollo.integration.normalizer.HeroNameQuery;
+import com.homer.apollographql.apollo.http.OkHttpExecutionContext;
+import com.homer.apollographql.apollo.response.OperationResponseParser;
+import com.homer.apollographql.apollo.rx2.Rx2Apollo;
 import com.google.common.base.Charsets;
 import com.google.common.base.Function;
 import com.google.common.collect.FluentIterable;
@@ -45,8 +45,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import static com.apollographql.apollo.integration.normalizer.type.Episode.EMPIRE;
-import static com.apollographql.apollo.integration.normalizer.type.Episode.JEDI;
+import static com.homer.apollographql.apollo.integration.normalizer.type.Episode.EMPIRE;
+import static com.homer.apollographql.apollo.integration.normalizer.type.Episode.JEDI;
 import static com.google.common.truth.Truth.assertThat;
 
 @SuppressWarnings("SimpleDateFormatConstant")

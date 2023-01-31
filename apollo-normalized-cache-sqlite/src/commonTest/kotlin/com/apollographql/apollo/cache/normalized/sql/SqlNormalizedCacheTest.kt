@@ -1,9 +1,9 @@
-package com.apollographql.apollo.cache.normalized.sql
+package com.homer.apollographql.apollo.cache.normalized.sql
 
-import com.apollographql.apollo.cache.ApolloCacheHeaders
-import com.apollographql.apollo.cache.CacheHeaders
-import com.apollographql.apollo.cache.normalized.Record
-import com.apollographql.apollo.cache.normalized.RecordFieldJsonAdapter
+import com.homer.apollographql.apollo.cache.ApolloCacheHeaders
+import com.homer.apollographql.apollo.cache.CacheHeaders
+import com.homer.apollographql.apollo.cache.normalized.Record
+import com.homer.apollographql.apollo.cache.normalized.RecordFieldJsonAdapter
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals

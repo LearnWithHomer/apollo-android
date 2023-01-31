@@ -1,4 +1,4 @@
-package com.apollographql.apollo;
+package com.homer.apollographql.apollo;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;

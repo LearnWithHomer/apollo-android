@@ -1,15 +1,15 @@
-package com.apollographql.apollo;
+package com.homer.apollographql.apollo;
 
 
-import com.apollographql.apollo.api.Response;
-import com.apollographql.apollo.cache.normalized.Record;
-import com.apollographql.apollo.exception.ApolloException;
-import com.apollographql.apollo.exception.ApolloParseException;
-import com.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery;
-import com.apollographql.apollo.integration.normalizer.type.Episode;
-import com.apollographql.apollo.interceptor.ApolloInterceptor;
-import com.apollographql.apollo.interceptor.ApolloInterceptorChain;
-import com.apollographql.apollo.rx2.Rx2Apollo;
+import com.homer.apollographql.apollo.api.Response;
+import com.homer.apollographql.apollo.cache.normalized.Record;
+import com.homer.apollographql.apollo.exception.ApolloException;
+import com.homer.apollographql.apollo.exception.ApolloParseException;
+import com.homer.apollographql.apollo.integration.normalizer.EpisodeHeroNameQuery;
+import com.homer.apollographql.apollo.integration.normalizer.type.Episode;
+import com.homer.apollographql.apollo.interceptor.ApolloInterceptor;
+import com.homer.apollographql.apollo.interceptor.ApolloInterceptorChain;
+import com.homer.apollographql.apollo.rx2.Rx2Apollo;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -32,7 +32,7 @@ import okhttp3.ResponseBody;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 
-import static com.apollographql.apollo.interceptor.ApolloInterceptor.InterceptorResponse;
+import static com.homer.apollographql.apollo.interceptor.ApolloInterceptor.InterceptorResponse;
 import static com.google.common.truth.Truth.assertThat;
 
 public class ApolloInterceptorTest {

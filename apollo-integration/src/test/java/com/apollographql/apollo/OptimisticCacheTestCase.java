@@ -1,21 +1,21 @@
-package com.apollographql.apollo;
+package com.homer.apollographql.apollo;
 
-import com.apollographql.apollo.api.Input;
-import com.apollographql.apollo.api.Response;
-import com.apollographql.apollo.cache.normalized.lru.EvictionPolicy;
-import com.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory;
-import com.apollographql.apollo.exception.ApolloException;
-import com.apollographql.apollo.fetcher.ApolloResponseFetchers;
-import com.apollographql.apollo.integration.normalizer.HeroAndFriendsNamesQuery;
-import com.apollographql.apollo.integration.normalizer.HeroAndFriendsNamesWithIDsQuery;
-import com.apollographql.apollo.integration.normalizer.HeroNameQuery;
-import com.apollographql.apollo.integration.normalizer.HeroNameWithEnumsQuery;
-import com.apollographql.apollo.integration.normalizer.HeroNameWithIdQuery;
-import com.apollographql.apollo.integration.normalizer.ReviewsByEpisodeQuery;
-import com.apollographql.apollo.integration.normalizer.UpdateReviewMutation;
-import com.apollographql.apollo.integration.normalizer.type.ColorInput;
-import com.apollographql.apollo.integration.normalizer.type.Episode;
-import com.apollographql.apollo.integration.normalizer.type.ReviewInput;
+import com.homer.apollographql.apollo.api.Input;
+import com.homer.apollographql.apollo.api.Response;
+import com.homer.apollographql.apollo.cache.normalized.lru.EvictionPolicy;
+import com.homer.apollographql.apollo.cache.normalized.lru.LruNormalizedCacheFactory;
+import com.homer.apollographql.apollo.exception.ApolloException;
+import com.homer.apollographql.apollo.fetcher.ApolloResponseFetchers;
+import com.homer.apollographql.apollo.integration.normalizer.HeroAndFriendsNamesQuery;
+import com.homer.apollographql.apollo.integration.normalizer.HeroAndFriendsNamesWithIDsQuery;
+import com.homer.apollographql.apollo.integration.normalizer.HeroNameQuery;
+import com.homer.apollographql.apollo.integration.normalizer.HeroNameWithEnumsQuery;
+import com.homer.apollographql.apollo.integration.normalizer.HeroNameWithIdQuery;
+import com.homer.apollographql.apollo.integration.normalizer.ReviewsByEpisodeQuery;
+import com.homer.apollographql.apollo.integration.normalizer.UpdateReviewMutation;
+import com.homer.apollographql.apollo.integration.normalizer.type.ColorInput;
+import com.homer.apollographql.apollo.integration.normalizer.type.Episode;
+import com.homer.apollographql.apollo.integration.normalizer.type.ReviewInput;
 import io.reactivex.functions.Predicate;
 import okhttp3.Dispatcher;
 import okhttp3.OkHttpClient;
@@ -32,7 +32,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-import static com.apollographql.apollo.fetcher.ApolloResponseFetchers.CACHE_ONLY;
+import static com.homer.apollographql.apollo.fetcher.ApolloResponseFetchers.CACHE_ONLY;
 import static com.google.common.truth.Truth.assertThat;
 
 public class OptimisticCacheTestCase {

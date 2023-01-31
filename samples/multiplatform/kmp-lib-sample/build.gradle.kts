@@ -3,10 +3,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   kotlin("multiplatform")
-  id("com.apollographql.apollo")
+  id("com.homer.apollographql.apollo")
 }
 
-group = "com.apollographql.apollo.kmpsample"
+group = "com.homer.apollographql.apollo.kmpsample"
 version = 1.0
 
 kotlin {
@@ -28,8 +28,8 @@ kotlin {
   sourceSets {
     commonMain {
       dependencies {
-        implementation("com.apollographql.apollo:apollo-api")
-        implementation("com.apollographql.apollo:apollo-runtime-kotlin")
+        implementation("com.homer.apollographql.apollo:apollo-api")
+        implementation("com.homer.apollographql.apollo:apollo-runtime-kotlin")
         implementation(groovy.util.Eval.x(project, "x.dep.kotlin.coroutines"))
       }
     }
@@ -80,10 +80,10 @@ tasks.register("copyFramework", Sync::class) {
 apollo {
   service("github") {
     sourceFolder.set("com/apollographql/apollo/kmpsample")
-    rootPackageName.set("com.apollographql.apollo.kmpsample")
+    rootPackageName.set("com.homer.apollographql.apollo.kmpsample")
   }
   service("rocketreserver") {
     sourceFolder.set("com/apollographql/apollo/rocketreserver")
-    rootPackageName.set("com.apollographql.apollo.rocketreserver")
+    rootPackageName.set("com.homer.apollographql.apollo.rocketreserver")
   }
 }
