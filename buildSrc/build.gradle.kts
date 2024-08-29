@@ -1,5 +1,6 @@
 plugins {
-  id("org.jetbrains.kotlin.jvm").version("1.4.10")
+  // Match the gradle wrapper version as close as possible to avoid classpath mismatches
+  id("org.jetbrains.kotlin.jvm").version("1.5.31")
 }
 
 project.apply {

@@ -7,6 +7,8 @@ metalava {
   hiddenPackages += setOf("com.homer.apollographql.apollo.internal")
 }
 
+val testCompile by configurations.creating
+
 dependencies {
   api(project(":apollo-api"))
   api(project(":apollo-normalized-cache"))
@@ -18,7 +20,7 @@ dependencies {
   add("testImplementation", groovy.util.Eval.x(project, "x.dep.junit"))
   add("testImplementation", groovy.util.Eval.x(project, "x.dep.truth"))
   add("testImplementation", groovy.util.Eval.x(project, "x.dep.okHttp.mockWebServer"))
-  add("testImplementation", project(":apollo-rx2-support"))
+//  add("testImplementation", project(":apollo-rx2-support"))
 }
 
 tasks.withType<Javadoc> {

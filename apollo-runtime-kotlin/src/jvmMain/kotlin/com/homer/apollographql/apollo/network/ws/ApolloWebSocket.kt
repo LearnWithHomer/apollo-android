@@ -51,7 +51,7 @@ actual class ApolloWebSocketFactory(
 
       override fun onMessage(webSocket: WebSocket, text: String) {
         try {
-          messageChannel.offer(text.commonAsUtf8ToByteArray().toByteString())
+          messageChannel.trySend(text.commonAsUtf8ToByteArray().toByteString())
         } catch (e: Exception) {
           webSocket.cancel()
         }
@@ -59,7 +59,7 @@ actual class ApolloWebSocketFactory(
 
       override fun onMessage(webSocket: WebSocket, bytes: ByteString) {
         try {
-          messageChannel.offer(bytes)
+          messageChannel.trySend(bytes)
         } catch (e: Exception) {
           webSocket.cancel()
         }

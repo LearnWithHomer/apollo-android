@@ -82,41 +82,12 @@ fun Project.configurePublishing() {
    * Javadoc
    */
   var javadocTask = tasks.findByName("javadoc") as Javadoc?
-  var javadocJarTaskProvider: TaskProvider<org.gradle.jvm.tasks.Jar>? = null
-
-  if (javadocTask == null && android != null) {
-    // create the Android javadoc if needed
-    javadocTask = tasks.create("javadoc", Javadoc::class.java) {
-      source = android.sourceSets["main"].java.sourceFiles
-      classpath += project.files(android.bootClasspath.joinToString(File.pathSeparator))
-
-      (android as? com.android.build.gradle.LibraryExtension)?.libraryVariants?.configureEach {
-        if (name != "release") {
-          return@configureEach
-        }
-        classpath += getCompileClasspath(null)
-      }
-    }
-  }
-
+  var javadocJarTaskProvider: TaskProvider<org.gradle.jvm.tasks.Jar>?
   javadocJarTaskProvider = tasks.register("javadocJar", org.gradle.jvm.tasks.Jar::class.java) {
     archiveClassifier.set("javadoc")
     if (javadocTask != null) {
       dependsOn(javadocTask)
       from(javadocTask.destinationDir)
-    }
-  }
-
-  val javaPluginConvention = project.convention.findPlugin(JavaPluginConvention::class.java)
-  val sourcesJarTaskProvider = tasks.register("sourcesJar", org.gradle.jvm.tasks.Jar::class.java) {
-    archiveClassifier.set("sources")
-    when {
-      javaPluginConvention != null && android == null -> {
-        from(javaPluginConvention.sourceSets.get("main").allSource)
-      }
-      android != null -> {
-        from(android.sourceSets["main"].java.sourceFiles)
-      }
     }
   }
 
@@ -144,7 +115,6 @@ fun Project.configurePublishing() {
             artifact(javadocJarTaskProvider.get())
             if (name == "kotlinMultiplatform") {
               // sources are added for each platform but not for the common module
-              artifact(sourcesJarTaskProvider.get())
             }
           }
         }
@@ -152,7 +122,6 @@ fun Project.configurePublishing() {
           // java-gradle-plugin doesn't add javadoc/sources by default so add it here
           withType<MavenPublication> {
             artifact(javadocJarTaskProvider.get())
-            artifact(sourcesJarTaskProvider.get())
           }
         }
         else -> {
@@ -167,7 +136,6 @@ fun Project.configurePublishing() {
             }
 
             artifact(javadocJarTaskProvider.get())
-            artifact(sourcesJarTaskProvider.get())
 
             pom {
               artifactId = findProperty("POM_ARTIFACT_ID") as String?

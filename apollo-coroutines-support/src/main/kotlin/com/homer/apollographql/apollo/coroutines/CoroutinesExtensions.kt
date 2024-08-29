@@ -32,7 +32,7 @@ fun <T> com.homer.apollographql.apollo.ApolloCall<T>.toFlow(): Flow<Response<T>>
       object : com.homer.apollographql.apollo.ApolloCall.Callback<T>() {
         override fun onResponse(response: Response<T>) {
           runCatching {
-            offer(response)
+            trySend(response)
           }
         }
 
@@ -63,7 +63,7 @@ fun <T> com.homer.apollographql.apollo.ApolloQueryWatcher<T>.toFlow(): Flow<Resp
       object : com.homer.apollographql.apollo.ApolloCall.Callback<T>() {
         override fun onResponse(response: Response<T>) {
           runCatching {
-            offer(response)
+            trySend(response)
           }
         }
 
@@ -160,7 +160,7 @@ fun <T> com.homer.apollographql.apollo.ApolloSubscriptionCall<T>.toFlow(): Flow<
 
         override fun onResponse(response: Response<T>) {
           runCatching {
-            channel.offer(response)
+            channel.trySend(response)
           }
         }
 
