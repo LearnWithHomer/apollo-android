@@ -4,7 +4,6 @@ import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.internal.impldep.org.junit.experimental.categories.Categories.CategoryFilter.include
-import org.jetbrains.kotlin.gradle.internal.kapt.incremental.UnknownSnapshot.classpath
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
