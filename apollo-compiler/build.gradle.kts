@@ -1,14 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-  antlr
+//  antlr
   `java-library`
   kotlin("jvm")
   kotlin("kapt")
 }
 
 dependencies {
-  add("antlr", groovy.util.Eval.x(project, "x.dep.antlr.antlr"))
+//  add("antlr", groovy.util.Eval.x(project, "x.dep.antlr.antlr"))
+  add("implementation", groovy.util.Eval.x(project, "x.dep.antlr.runtime"))
   add("implementation", groovy.util.Eval.x(project, "x.dep.moshi.adapters"))
   add("implementation", groovy.util.Eval.x(project, "x.dep.moshi.moshi"))
   add("implementation", groovy.util.Eval.x(project, "x.dep.poet.java"))
@@ -50,11 +51,14 @@ val pluginVersionTaskProvider = tasks.register("pluginVersion", GeneratePluginVe
 tasks.withType(KotlinCompile::class.java) {
   val versionFileProvider = pluginVersionTaskProvider.flatMap { it.outputFile }
   source(versionFileProvider)
-  dependsOn("generateGrammarSource")
+//  dependsOn("generateGrammarSource")
 }
 
 tasks.withType<Checkstyle> {
-  exclude("**com/apollographql/apollo/compiler/parser/antlr/**")
+  exclude(
+      "**com/apollographql/apollo/compiler/parser/antlr/**",
+      "**com/homer/apollographql/apollo/compiler/parser/antlr/**",
+  )
 }
 
 // since test/graphql is not an input to Test tasks, they're not run with the changes made in there.

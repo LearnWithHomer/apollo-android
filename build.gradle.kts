@@ -3,6 +3,8 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.internal.impldep.org.junit.experimental.categories.Categories.CategoryFilter.include
+import org.jetbrains.kotlin.gradle.internal.kapt.incremental.UnknownSnapshot.classpath
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
@@ -14,6 +16,8 @@ buildscript {
 ApiCompatibility.configure(rootProject)
 
 subprojects {
+  setJitPackFields()
+
   apply {
     from(rootProject.file("gradle/dependencies.gradle"))
   }
@@ -328,5 +332,13 @@ tasks.register("sonatypeCloseAndReleaseRepository") {
         baseUrl = "https://s01.oss.sonatype.org/service/local/",
         groupId = "com.apollographql"
     ).closeAndReleaseRepository()
+  }
+}
+
+/* Jit pack configuration */
+fun Project.setJitPackFields() {
+  val android = extensions.findByType(com.android.build.gradle.BaseExtension::class.java)
+  if ( android as? com.android.build.gradle.LibraryExtension != null) {
+    apply(plugin = "com.github.dcendents.android-maven")
   }
 }
