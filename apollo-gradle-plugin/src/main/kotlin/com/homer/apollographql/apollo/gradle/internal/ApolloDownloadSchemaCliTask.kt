@@ -1,6 +1,5 @@
 package com.homer.apollographql.apollo.gradle.internal
 
-import com.homer.apollographql.apollo.compiler.parser.antlr.GraphSDLParser
 import com.homer.apollographql.apollo.compiler.parser.introspection.IntrospectionSchema
 import com.homer.apollographql.apollo.compiler.parser.introspection.IntrospectionSchema.Companion.wrap
 import com.homer.apollographql.apollo.compiler.parser.introspection.toSDL
@@ -19,7 +18,6 @@ import org.gradle.api.tasks.TaskAction
 import org.gradle.api.tasks.options.Option
 import java.io.File
 import java.nio.charset.Charset
-import java.util.Locale
 
 /**
  * This task is very similar to [ApolloDownloadSchemaTask] except it allows to override parameters from the command line

@@ -17,6 +17,6 @@ include("apollo-runtime-kotlin")
 
 if (System.getProperty("idea.sync.active") == null) {
   include("apollo-idling-resource")
-  include("apollo-normalized-cache-sqlite")
-  include("apollo-android-support")
+//  include("apollo-normalized-cache-sqlite")
+//  include("apollo-android-support")
 }
